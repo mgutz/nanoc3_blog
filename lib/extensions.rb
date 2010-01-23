@@ -4,7 +4,7 @@ class Nanoc3::Item
     opts[:rep] ||= :default 
     opts[:snapshot] ||= :last 
     reps.find { |r| r.name == opts[:rep] }.content_at_snapshot(opts[:snapshot]) 
-  end 
+  end
 end
 
 

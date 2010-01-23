@@ -1,4 +1,3 @@
-include Nanoc3::Helpers::Tagging
 include Nanoc3::Helpers::Rendering
 
 
@@ -24,9 +23,12 @@ def create_tag_pages
 end
 
 
-def pre_content(identifier)
-  items ||= @items
-  item = items.find { |item| item.identifier == identifier }
+def partial(identifier_or_item)
+  item = identifier_or_item
+  if !item.is_a?(Nanoc3::Item)
+    items ||= @items
+    item = items.find { |item| item.identifier == identifier_or_item }
+  end
   item.compiled_content(:snapshot => :pre) 
 end
 

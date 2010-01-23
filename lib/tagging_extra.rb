@@ -78,7 +78,6 @@ module TaggingExtra
 
     ranks
   end
-  
 end
 
 include TaggingExtra

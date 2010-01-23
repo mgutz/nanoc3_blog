@@ -4,10 +4,16 @@ title: open-source
 %h1 mgutz.com example blog
 
 .sticky
-  != pre_content('/sticky/')
+  != partial('/sticky/')
   
 - items_by_date.reverse[0,3].each do |item|
   .featured
-    != item.compiled_content :snapshot => :pre
-    = tags_for(item) if item[:tags]
+    != partial(item)
+    .item_info
+    - if item[:tags]
+      %ul.tags
+        - item[:tags].each do |tag|
+          %li
+            %a(href="/tags/#{tag}/") tag
+              
     
