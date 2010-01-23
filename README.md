@@ -19,4 +19,14 @@ For items that do not need metadata, it's simply
 
     % gem install rack mime-types nanoc3 haml
     
+    
+## Articles
+
+Items must be stored in a year subfolder, with the full date as the file name in this format:
+ 
+    yyyy/mm/dd-title.haml
+    
+    # e.g.
+    2010/2010-01-01-the_title_of_this_post.haml
+    
 

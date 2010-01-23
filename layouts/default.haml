@@ -4,13 +4,14 @@
 %html
   %head
     %title 
-      A Brand New nanoc Site - 
+      mgutz.com - 
       = @item[:title]
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
   %body
     #main
       = yield
+      = tags_for @item if @item[:tags]
     #sidebar
       %h2 Documentation
       %ul
@@ -26,3 +27,4 @@
           %a{:href => "http://groups.google.com/group/nanoc-es/"} Spanish Discussion Group
         %li
           %a{:href => "http://projects.stoneship.org/trac/nanoc/"} Wiki
+    

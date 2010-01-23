@@ -1,0 +1,4 @@
+<% items_with_tag(tag, items).each do |item| %>
+.tag
+  %a(href='<%= output_path(item) %>' class='internal-link') <%= item[:title] %>
+<% end %>

@@ -1,5 +1,21 @@
 #!/usr/bin/env ruby
 
+require 'pp'
+require 'erb'
+
+preprocess do
+  template = File.open(File.expand_path('templates/tag_page.erb')).read
+
+  tag_set(items).each do |tag|
+    haml_template = ERB.new(template).result(binding)
+
+    items << Nanoc3::Item.new(
+      haml_template,
+      { :title => "Category: #{tag}" },      # attributes
+      "/tags/#{tag}/"                        # identifier
+    )
+  end
+end
 
 compile '/assets/css/*/' do
   filter :sass
@@ -9,14 +25,13 @@ route '/assets/css/*/' do
   item.identifier.chop + '.css'
 end
 
-
 compile '*' do
   filter :haml
   layout 'default'
 end
 
 route '*' do
-  item.identifier + 'index.html'
+  output_path(item)
 end
 
 layout '*', :haml
