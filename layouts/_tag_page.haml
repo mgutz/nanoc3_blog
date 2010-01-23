@@ -1,0 +1,6 @@
+---
+---
+- items_with_tag(tag).each do |item|
+  .tag
+    %a(href='#{url_for(item)}' class='internal-link')
+      = item[:title]

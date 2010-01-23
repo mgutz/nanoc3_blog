@@ -1,20 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'pp'
-require 'erb'
 
 preprocess do
-  template = File.open(File.expand_path('templates/tag_page.erb')).read
-
-  tag_set(items).each do |tag|
-    haml_template = ERB.new(template).result(binding)
-
-    items << Nanoc3::Item.new(
-      haml_template,
-      { :title => "Category: #{tag}" },      # attributes
-      "/tags/#{tag}/"                        # identifier
-    )
-  end
+  create_tag_pages
 end
 
 compile '/assets/css/*/' do
@@ -31,7 +20,7 @@ compile '*' do
 end
 
 route '*' do
-  output_path(item)
+  url_for(item)
 end
 
 layout '*', :haml
