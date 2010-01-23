@@ -4,27 +4,15 @@
 %html
   %head
     %title 
-      mgutz.com - 
-      = @item[:title]
+      = "mgutz.com - #{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
   %body
     #main
       = yield
-      = tags_for @item if @item[:tags]
     #sidebar
-      %h2 Documentation
       %ul
         %li
-          %a{:href => "http://nanoc.stoneship.org/tutorial/"} Tutorial
+          %a(href='/about/' class='internal') about
         %li
-          %a{:href => "http://nanoc.stoneship.org/manual/"} Manual
-      %h2 Community
-      %ul
-        %li
-          %a{:href => "http://groups.google.com/group/nanoc/"} Discussion Group
-        %li
-          %a{:href => "http://groups.google.com/group/nanoc-es/"} Spanish Discussion Group
-        %li
-          %a{:href => "http://projects.stoneship.org/trac/nanoc/"} Wiki
-    
+          %a(href='http://github.com/mgutz' class='external') my open-source

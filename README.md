@@ -29,5 +29,3 @@ your posts.
     2010-01-01-post.haml #=> 2010/01/01/post.html
     2010/01-01-post.haml #=> 2010/01/01/post.html
     2010/01/01-post.haml #=> 2010/01/01/post.html
-    
-

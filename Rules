@@ -20,7 +20,7 @@ compile '*' do
 end
 
 route '*' do
-  url_for(item)
+  route_path(item)
 end
 
 layout '*', :haml

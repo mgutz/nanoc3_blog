@@ -3,21 +3,11 @@ title: open-source
 ---
 %h1 mgutz.com example blog
 
-%p This is an example of a nanoc3 blog.
-
-%p To get started, consider replacing this default homepage with your own customized homepage. Some pointers on how to do so:
-%ul
-  %li
-    %p
-      %strong Change this page's content 
-      by editing 
-      %code content/index.haml
-      \. This is the actual page content, and therefore doesn’t include the header, sidebar or style information (those are part of the layout).
-  %li
-    %p
-      %strong Change the layout
-      by editing 
-      %code layouts/default.haml
-      , and create something unique (and hopefully less bland).
-
-%p If you need any help with customizing your nanoc web site, be sure to check out the documentation (see sidebar), and be sure to subscribe to the discussion group (also see sidebar). Enjoy!
+.sticky
+  != pre_content('/sticky/')
+  
+- items_by_date.reverse[0,3].each do |item|
+  .featured
+    != item.compiled_content :snapshot => :pre
+    = tags_for(item) if item[:tags]
+    
