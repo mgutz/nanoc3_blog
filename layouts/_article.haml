@@ -1,0 +1,16 @@
+---
+---
+.featured
+  .title
+    %a(href="#{route_path(item)}" class="permalink")= item[:title]
+  .body
+    != partial(item)
+  .meta
+    %ul.tags
+      %li ::
+      %li= Time.parse(item[:created_at]).strftime("%B %d, %Y")
+      - if item[:tags]
+        - item[:tags].each do |tag|
+          %li
+            %a(href="/tags/#{tag}/" class='tag')
+              = tag

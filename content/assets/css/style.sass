@@ -13,51 +13,108 @@ body
 
 a
   text-decoration: none
+  background: #eef
+  padding-left: .3em
+  padding-right: .3em    
+  margin: 2px
 
   &:link, &:visited
-    color: #f30
+    color: #777
 
   &:hover
-    color: #f90
+    text-decoration: underline
+    color: #444
 
-code
+code, pre
   color: #222
-  font-family: Courier, monospaced
+  font-family: Consolas, Monaco, monospace
+  font-size: 0.8em
+  
+pre
+  padding: 0.5em
+  background: #eee
+  
    
-
 #main
   position: absolute
   top: 40px
-  left: 280px
-  width: 500px
+  left: 200px
+  width: 600px
 
-  h1
-    font-size: 40px
-    font-weight: normal
-    line-height: 40px
-    letter-spacing: -1px
 
   p
-    margin: 20px 0
-    font-size: 15px
-    line-height: 20px
+    margin: 1.5em 0
+    line-height: 1.24em
 
+a.important-link
+  background: #a22
+  color: white
+    
+.featured
+  margin-bottom: 2.6em
+  
+.sticky
+  border: 3px double #eee
+  margin-bottom: 1.3em  
+  padding: 20px
+  text-align: center
+  
+
+  
+h1, h2, h3, h4, .title, a.permalink, .primary
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: #222
+  font-weight: bold
+
+#header
+  margin-bottom: 1.5em
+  .primary
+    font-size: 3em
+    color: #a22
+  .byline
+    color: #ccc
+
+.body
+  p
+    line-height: 1.2em
+    
+  
+.title
+  border-bottom: 1px solid #eee
+  font-size: 1.8em
+  padding-bottom: 2px
+  
+  a
+    margin: 0
+    padding: 0
+    background: white
+    
+.archive
+  margin-top: 4em
+  .title
+    border: none
+    font-size: 1.1em
+    font-weight: none
+
+.meta
+  font-size: 0.9em 
   ul
-    margin: 20px
-
-  li
-    list-style-type: square
-    font-size: 15px
-    line-height: 20px
-
+    list-style-type: none
+    
+    li
+      color: #777
+      display: inline
+a.tag
+  color: #777
+  background: #edd
+    
 
 #sidebar
   position: absolute
-  top: 40px
-  left: 20px
-  width: 200px
+  top: 140px
+  left: 0px
+  width: 160px
   padding: 20px 20px 0 0
-  border-right: 1px solid #ccc
   text-align: right
 
   h2
@@ -69,7 +126,7 @@ code
 
   ul
     list-style-type: none
-    margin: 20px 0
+    margin-bottom: 10px
 
   li
     font-size: 14px

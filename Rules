@@ -4,6 +4,7 @@ require 'pp'
 
 preprocess do
   create_tag_pages
+  add_missing_info
 end
 
 compile '/assets/css/*/' do
@@ -14,7 +15,13 @@ route '/assets/css/*/' do
   item.identifier.chop + '.css'
 end
 
+compile 'showcase/*' do
+  filter :haml
+  layout 'showcase'
+end
+
 compile '*' do
+  pp item
   filter :haml
   layout 'default'
 end
@@ -22,5 +29,6 @@ end
 route '*' do
   route_path(item)
 end
+
 
 layout '*', :haml

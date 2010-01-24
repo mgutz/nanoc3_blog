@@ -1,19 +1,21 @@
 ---
 title: open-source
 ---
-%h1 mgutz.com example blog
 
 .sticky
-  != partial('/sticky/')
-  
-- items_by_date.reverse[0,3].each do |item|
-  .featured
+  - item = item_by_identifier('/sticky/')
+  - if item[:title]
+    .title= item[:title]
+  .body
     != partial(item)
-    .item_info
-    - if item[:tags]
-      %ul.tags
-        - item[:tags].each do |tag|
-          %li
-            %a(href="/tags/#{tag}/") tag
-              
+
+- oldest_item = nil
+- sorted_articles[0, 1].each do |item|
+  - oldest_item = item
+  = render('_article', :item => item) 
+                
+  .archive
+    - n_older_articles(2, oldest_item).each do |item|
+      .title 
+        %a(href="#{route_path(item)}" class="permalink")= "&larr; #{item[:title]}"
     
