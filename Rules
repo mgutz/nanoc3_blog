@@ -21,7 +21,6 @@ compile 'showcase/*' do
 end
 
 compile '*' do
-  pp item
   filter :haml
   layout 'default'
 end

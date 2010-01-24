@@ -91,9 +91,3 @@ def derive_created_at(item)
   end
   date
 end
-
-
-
-def position(reference_item)
-  sorted_articles
-end
