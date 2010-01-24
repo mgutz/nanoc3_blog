@@ -1,78 +1,91 @@
 ---
 ---
+= sans
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  
+= serif
+  font-family: Georgia, Palatino, Times, 'Times New Roman', serif
+
+= monospace
+  font-family: Consolas, Monaco, monospace
+
+!base_color = #000
+!normal_color = lighten(!base_color, 20%)
+!passive_color = lighten(!base_color, 60%)
+!attention_color = !base_color
+!contrast_color = #a22  
+/*!link_base = #1E90FF
+!link_base = !contrast_color
+!link_hover_color = !link_base
+!link_color = lighten(!link_base, 33%)
+  
 *
   margin: 0
   padding: 0
-  font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif
-  color: #444
+  +serif
+  color = !normal_color
 
 
 body
   background: #fff
 
-
 a
+  color = !link_color
   text-decoration: none
-  background: #eef
   padding-left: .3em
   padding-right: .3em    
   margin: 2px
 
   &:link, &:visited
-    color: #777
-
+    color = !link_color
+  
   &:hover
+    color = !link_hover_color
     text-decoration: underline
-    color: #444
 
 code, pre
-  color: #222
-  font-family: Consolas, Monaco, monospace
+  color = !normal_color
+  +monospace
   font-size: 0.8em
+
+h1, h2, h3, h4, .title, a.permalink, .logo
+  +sans
+  color = !attention_color
+  font-weight: bold
   
 pre
   padding: 0.5em
   background: #eee
-  
+
+ul
+  list-style-type: none
    
 #main
-  position: absolute
-  top: 40px
-  left: 200px
-  width: 600px
-
-
+  margin: auto
+  width: 640px
+  /*position: absolute
+  /*left: 200px
+  /*width: 600px
   p
-    margin: 1.5em 0
+    margin-bottom: 1.5em
     line-height: 1.24em
 
-a.important-link
-  background: #a22
-  color: white
-    
-.featured
-  margin-bottom: 2.6em
-  
-.sticky
-  border: 3px double #eee
-  margin-bottom: 1.3em  
-  padding: 20px
-  text-align: center
-  
-
-  
-h1, h2, h3, h4, .title, a.permalink, .primary
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  color: #222
-  font-weight: bold
-
 #header
-  margin-bottom: 1.5em
-  .primary
+  overflow: auto
+  margin: 3em 0 3em 0
+  .logo
+    float: left
     font-size: 3em
-    color: #a22
+    color = !contrast_color
+  #nav
+    float: right
+    margin-top: 24px
+    text-align: right
+    ul
+      li
+        display: inline
   .byline
-    color: #ccc
+    color = !passive_color
 
 .body
   p
@@ -83,51 +96,55 @@ h1, h2, h3, h4, .title, a.permalink, .primary
   border-bottom: 1px solid #eee
   font-size: 1.8em
   padding-bottom: 2px
+  margin-bottom: .9em
   
   a
     margin: 0
     padding: 0
     background: white
     
-.archive
-  margin-top: 4em
+#other-articles
+  margin-top: 3em
   .title
     border: none
     font-size: 1.1em
     font-weight: none
+    margin: 0
+
+.older
+  float: left
+.newer
+  float: right
 
 .meta
   font-size: 0.9em 
   ul
-    list-style-type: none
-    
     li
-      color: #777
+      color = !passive_color
       display: inline
-a.tag
-  color: #777
-  background: #edd
+
     
-
-#sidebar
-  position: absolute
-  top: 140px
-  left: 0px
-  width: 160px
-  padding: 20px 20px 0 0
-  text-align: right
-
+#taglist
+  margin-top: 2em
+  text-align: center
   h2
-    text-transform: uppercase
-    font-size: 13px
-    color: #333
-    letter-spacing: 1px
-    line-height: 20px
+    color = !passive_color
+    font-size: 1em
+    font-weight: normal
+    margin-bottom: 1em
+     
+.clear
+  clear: both
+  
+.featured
+  margin-bottom: 3em
 
-  ul
-    list-style-type: none
-    margin-bottom: 10px
-
-  li
-    font-size: 14px
-    line-height: 20px
+#sticky
+  border: 3px double #eee
+  margin-bottom: 3em  
+  .body
+    margin: auto
+    text-align: center
+    p
+      margin: 0
+      line-height: 4em

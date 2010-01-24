@@ -1,0 +1,15 @@
+---
+title: All Tags
+---
+
+.title
+  All Tags
+  
+%p Listed below are the set of tag links related to articles in this site. The number of articles related to a tag succeeds the tag.
+
+- tags = count_tags()
+- tags.each do |tag,count|
+  %ul
+    %li
+      %a(href="/tags/#{tag}/" class='tag-big')= tag
+      = "x #{count}"

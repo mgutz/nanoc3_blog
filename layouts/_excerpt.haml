@@ -1,0 +1,17 @@
+---
+---
+-if item[:excerpt]
+  .excerpt
+    .title
+      %a(href="#{route_path(item)}" class="permalink")= item[:title]
+    .body
+      %p
+        = item[:excerpt]
+      .meta
+        %ul.tags
+          %li= pretty_time(item[:created_at])
+          - if item[:tags]
+            - item[:tags].each do |tag|
+              %li
+                %a(href="/tags/#{tag}/" class='tag')
+                  = tag

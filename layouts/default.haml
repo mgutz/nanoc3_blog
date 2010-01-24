@@ -8,36 +8,27 @@
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
   %body
+    - content = yield
     
     #main
       #header 
-        .primary mgutz
-        .byline
-          mario gutierrez, open-source technologist
-      - if is_front_page?
-        = yield
+        .logo mgutz
+        #nav
+          %ul
+            -if !is_front_page?
+              %li
+                %a(href='/') home
+            %li
+              %a(href='/about/') about
+            %li
+              %a(href='/archives/') archives
+            %li
+              %a(href='/tags/all/') tags
+      .clear
+
+      - if @item[:kind] == 'article'
+        = render('_article', :item => @item, :content => content)
+        = render('_other_articles_nav', :reference_item => @item)
       - else
-        .title= @item[:title]
-        .body 
-          = yield
-        .meta
-          - if @item[:tags]
-            %ul.tags
-              - @item[:tags].each do |tag|
-                %li
-                  %a(href="/tags/#{tag}/" class='tag')
-                    = tag
-    #sidebar
-      %ul
-        -if !is_front_page?
-          %li
-            %a(href='/' class='internal') home
-        %li
-          %a(href='/about/' class='internal') about
-        %li
-          %a(href='/archives/') archives
-      
-      %ul.tag-list
-        - tag_set.sort.each do |tag|
-          %li
-            %a(href="/tags/#{tag}/" class='tag')= tag
+        = content
+      .clear

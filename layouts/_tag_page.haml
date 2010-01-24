@@ -1,5 +1,8 @@
 ---
 ---
+.title
+  = "#{tag.capitalize} Articles"
+  
 - items_with_tag(tag).each do |item|
   .tag
     %a(href='#{route_path(item)}' class='internal-link')

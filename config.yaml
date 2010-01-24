@@ -4,3 +4,9 @@ data_sources:
 - type: filesystem_combined
   items_root: /
   layouts_root: /
+# number of full featured posts to display on front
+featured_count: 2
+# number of excerpted posts to display on front
+excerpt_count: 0
+# number of other articles to reference at bottom of each article
+other_articles_max: 3

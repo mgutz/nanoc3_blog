@@ -1,0 +1,14 @@
+---
+---
+- max = config[:other_articles_max].to_i
+- older_only ||= true
+#other-articles
+  .older
+    - n_older_articles(max, reference_item).each do |item|
+      .title 
+        %a(href="#{route_path(item)}" class="permalink")= "&larr; #{item[:title]}"
+  - if !older_only
+    .newer
+      - n_newer_articles(max, reference_item).reverse.each do |item|
+        .title 
+          %a(href="#{route_path(item)}" class="permalink")= "#{item[:title]} &rarr;"

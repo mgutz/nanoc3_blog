@@ -1,8 +1,9 @@
 ---
-title: open-source
+title: Mario Gutierrez, Open-Source Technologist
 ---
 
-.sticky
+
+#sticky
   - item = item_by_identifier('/sticky/')
   - if item[:title]
     .title= item[:title]
@@ -10,12 +11,16 @@ title: open-source
     != partial(item)
 
 - oldest_item = nil
-- sorted_articles[0, 1].each do |item|
+- current_index = 0
+
+- sorted_articles[current_index, featured_count].each do |item|
   - oldest_item = item
-  = render('_article', :item => item) 
+  - current_index += 1
+  .featured
+    = render('_article', :item => item)
+
+- sorted_articles[current_index, excerpt_count].each do |item|
+  - oldest_item = item
+  = render('_excerpt', :item => item) 
                 
-  .archive
-    - n_older_articles(2, oldest_item).each do |item|
-      .title 
-        %a(href="#{route_path(item)}" class="permalink")= "&larr; #{item[:title]}"
-    
+= render('_other_articles_nav', :reference_item => oldest_item, :older_only => true)

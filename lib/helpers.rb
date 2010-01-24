@@ -1,5 +1,6 @@
 include Nanoc3::Helpers::Rendering
 include Nanoc3::Helpers::Blogging
+require 'time'
 
 # Hyphens are converted to sub-directories in the output folder. 
 def route_path(item)
@@ -78,6 +79,17 @@ def n_older_articles(n, reference_item)
 end
 
 
+def pretty_time(time)
+  Time.parse(time).strftime("%B %d, %Y") if !time.nil?
+end
+
+def featured_count
+  @config[:featured_count].to_i
+end
+
+def excerpt_count
+  @config[:excerpt_count].to_i
+end
 
 private
 
