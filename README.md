@@ -11,7 +11,9 @@ This is a customized [nanoc3](http://nanoc.stoneship.org/) blog site. Features:
   
 ## Installation
 
-    % gem install rack mime-types nanoc3 haml
+This site compiles under Ruby 1.9.1 :)
+
+    % gem install rack rake mime-types nanoc3 haml
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
     
 ## Usage
