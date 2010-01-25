@@ -1,6 +1,6 @@
-# nanoc_blog
+# nanoc3_blog
 
-This is a customized [nanoc3](http://nanoc.stoneship.org/) blog. Features:
+This is a customized [nanoc3](http://nanoc.stoneship.org/) blog generator. Features:
 
 1. Uses SASS/HAML for markup.
 2. Uses the filesystem_combined datasource, so a separate .yaml metadata file is not needed for each item.
@@ -36,19 +36,19 @@ Add the following content:
     
     %h1 My First Post
     
-Note the metadata is stored in the same file, not a separate YAML file. Each file requires metadata section even if it 
-is empty! Compile and browse the site:
+Note: The metadata is stored in the same file, not a separate YAML file. Even stylesheets require an empty metadata
+section. Compile and browse the site:
 
     % rake clean 
     % nanoc3 compile
     % nanoc3 aco
     
-Browse http://localhost:3000 to see your site.
+Browse http://localhost:3000 to see generated site.
 
 
 ## Deploying
 
-Simply copy `ouput/*` to the public folder of your (hosted) web server. It's that easy.
+Copy `ouput/*` to the public folder of your (hosted) web server.
     
 ## Naming Conventions
 
