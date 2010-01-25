@@ -12,12 +12,13 @@ This is a customized [nanoc3](http://nanoc.stoneship.org/) blog. Features:
 ## Installation
 
     % gem install rack mime-types nanoc3 haml
+    % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
     
 ## Usage
 
 ### Adding Content
 
-Create a new file under content. The path to the file must begin with a date in the following format--YYYY/MM/DD. The
+Create a new file under `content/`. The path to the file must begin with a date in the following format--YYYY/MM/DD. The
 front page uses this date information to select the newest posts. I suggest creating a YYYY subfolder to organize
 your posts:
 
@@ -35,10 +36,11 @@ Add the following content:
     
     %h1 My First Post
     
-Note the metadata is stored in the file, not a separate YAML file. Each file requires metadata section even if it 
+Note the metadata is stored in the same file, not a separate YAML file. Each file requires metadata section even if it 
 is empty! Compile and browse the site:
 
-    % rake clean && nanoc3 compile
+    % rake clean 
+    % nanoc3 compile
     % nanoc3 aco
     
 Browse http://localhost:3000 to see your site.
