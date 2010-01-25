@@ -10,7 +10,9 @@ title: All Tags
 .tags-page
   - tags = count_tags()
   %ul
-    - tags.each do |tag,count|
+    - tags.sort_by{|k,v| k}.each do |tag_count|
+      - tag = tag_count[0]
+      - count = tag_count[1]
       %li
         %a(href="/tags/#{tag}/")= tag
         = "x #{count}"
