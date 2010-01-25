@@ -24,3 +24,12 @@ title: Mario Gutierrez, Open-Source Technologist
   = render('_excerpt', :item => item) 
                 
 = render('_other_articles_nav', :reference_item => oldest_item, :older_only => true)
+
+.clear
+
+-# for SEO, but make it disappear
+#taglist.passive
+  - tags = count_tags()
+  all:
+  - tags.each do |tag,count|
+    %a(href="/tags/#{tag}/" class='bottom')= tag

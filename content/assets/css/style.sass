@@ -1,5 +1,6 @@
 ---
 ---
+
 = sans
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   
@@ -9,31 +10,88 @@
 = monospace
   font-family: Consolas, Monaco, monospace
 
+/* Change base color
 !base_color = #000
+!base10 = lighten(!base_color, 10%)
+!base20 = lighten(!base_color, 20%)
+!base30 = lighten(!base_color, 30%)
+!base40 = lighten(!base_color, 40%)
 !normal_color = lighten(!base_color, 20%)
 !passive_color = lighten(!base_color, 60%)
 !attention_color = !base_color
-!contrast_color = #a22  
-/*!link_base = #1E90FF
-!link_base = !contrast_color
+/* Change alternate color
+!alternate_color = #0070FF   
+!link_base = !alternate_color
 !link_hover_color = !link_base
-!link_color = lighten(!link_base, 33%)
-  
-*
+!link_color = lighten(!link_base, 15%)
+
+
+/* BEGIN Eric Meyer Reset CSS
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
   margin: 0
   padding: 0
+  border: 0
+  outline: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+
+
+body
+  line-height: 1
+
+
+ol, ul
+  list-style: none
+
+
+blockquote, q
+  quotes: none
+
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+
+q
+  &:before, &:after
+    content: ''
+    content: none
+
+
+\:focus
+  outline: 0
+
+
+ins
+  text-decoration: none
+
+
+del
+  text-decoration: line-through
+
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+  
+/* END Reset CSS
+
+  
+*
   +serif
   color = !normal_color
 
 
 body
+  font-size: 105%
   background: #fff
 
 a
   color = !link_color
   text-decoration: none
-  padding-left: .3em
-  padding-right: .3em    
   margin: 2px
 
   &:link, &:visited
@@ -48,24 +106,31 @@ code, pre
   +monospace
   font-size: 0.8em
 
-h1, h2, h3, h4, .title, a.permalink, .logo
+h1, h2, h3, h4, .title, .logo, .medium-link
   +sans
   color = !attention_color
   font-weight: bold
   
 pre
-  padding: 0.5em
-  background: #eee
+  background-color: #f8f8f8
+  border-left: 3px double #ccc
+  padding: 1em
 
-ul
-  list-style-type: none
+ul, ol
+  list-style-type: square
+  li
+    padding: .25em
+  
+ol, ul, pre
+  margin-bottom: 1.5em
+  
+.body
+  li
+    margin-left: 20px
    
 #main
   margin: auto
-  width: 640px
-  /*position: absolute
-  /*left: 200px
-  /*width: 600px
+  width: 720px
   p
     margin-bottom: 1.5em
     line-height: 1.24em
@@ -76,7 +141,11 @@ ul
   .logo
     float: left
     font-size: 3em
-    color = !contrast_color
+    color = !alternate_color
+    a
+      +sans
+      color = !alternate_color
+    
   #nav
     float: right
     margin-top: 24px
@@ -95,10 +164,12 @@ ul
 .title
   border-bottom: 1px solid #eee
   font-size: 1.8em
-  padding-bottom: 2px
+  padding-bottom: 6px
   margin-bottom: .9em
   
   a
+    +sans
+    color = !attention_color
     margin: 0
     padding: 0
     background: white
@@ -107,14 +178,18 @@ ul
   margin-top: 3em
   .title
     border: none
-    font-size: 1.1em
+    font-size: 1em
     font-weight: none
     margin: 0
 
 .older
   float: left
+  
 .newer
   float: right
+  
+.passive
+  color = !passive_color
 
 .meta
   font-size: 0.9em 
@@ -123,16 +198,29 @@ ul
       color = !passive_color
       display: inline
 
+ul.medium-links
+  list-style-type: none
+  li
+    padding-bottom: 0.5em
+  a
+    +sans
+    color = !attention_color
+    font-size: 1.2em
+    font-weight: bold
     
 #taglist
-  margin-top: 2em
-  text-align: center
-  h2
-    color = !passive_color
-    font-size: 1em
-    font-weight: normal
-    margin-bottom: 1em
-     
+  margin-top: 3em
+  text-align: right
+  color = lighten(!passive_color, 20%)
+  a
+    color = lighten(!link_color, 15%)
+    &:link, &:visited
+      color = lighten(!link_color, 15%)
+
+    &:hover
+      color = !link_hover_color
+      text-decoration: underline
+
 .clear
   clear: both
   
@@ -148,3 +236,22 @@ ul
     p
       margin: 0
       line-height: 4em
+
+.archives
+  .year
+    margin-bottom: 3em
+    h2
+      color = !base10
+      +serif
+      font-size: 2em
+      margin-bottom: 1em
+  .month
+    h2
+      color = !base20
+      +serif
+      font-size: 1.6em
+      margin-bottom: 0.8em
+      
+.tags-page
+  ul
+    list-style-type: none

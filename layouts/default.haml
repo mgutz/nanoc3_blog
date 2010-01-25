@@ -6,24 +6,29 @@
     %title 
       = "mgutz.com - #{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
+    %meta(name="keywords" content="#{tag_set.join(', ')}") 
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
   %body
     - content = yield
     
     #main
       #header 
-        .logo mgutz
+        .logo
+          - if is_front_page?
+            mgutz
+          -else
+            %a(href='/') &laquo; mgutz
         #nav
           %ul
-            -if !is_front_page?
+            - if @item.identifier != '/about/'
               %li
-                %a(href='/') home
-            %li
-              %a(href='/about/') about
-            %li
-              %a(href='/archives/') archives
-            %li
-              %a(href='/tags/all/') tags
+                %a(href='/about/') about
+            - if @item.identifier != '/archives/'
+              %li
+                %a(href='/archives/') archives
+            - if @item.identifier != '/tags/'
+              %li
+                %a(href='/tags/') tags
       .clear
 
       - if @item[:kind] == 'article'
