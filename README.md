@@ -1,27 +1,25 @@
-# nanoc-blog
+# nanoc_blog
 
 This is a customized [nanoc3](http://nanoc.stoneship.org/) blog. Features:
 
 1. Uses SASS/HAML for markup.
-2. Uses the filesystem_combined datasource so a separate .yaml metadata file is not needed for each item.
-3. Uses Blueprint CSS framework.
-3. Articles may be unpublished by setting `publish` to false at the top of the file:
-    ---
-    publish: false
-    ---
+2. Uses the filesystem_combined datasource, so a separate .yaml metadata file is not needed for each item.
+3. Rolls/archives articles to front page.
+4. Generates tag pages.
+5. Minimalist styling.
 
+  
 ## Installation
 
     % gem install rack mime-types nanoc3 haml
-    
     
 ## Usage
 
 ### Adding Content
 
-1. Create a new file under content. The path to the file must begin with a date in the following format--YYYY/MM/DD. The
+Create a new file under content. The path to the file must begin with a date in the following format--YYYY/MM/DD. The
 front page uses this date information to select the newest posts. I suggest creating a YYYY subfolder to organize
-your posts.
+your posts:
 
     % mkdir 2010
     % cd 2010
@@ -31,6 +29,8 @@ Add the following content:
 
     ---
     title: My First Post
+    kind: article
+    created_at: 2010/01/18
     ---
     
     %h1 My First Post
@@ -38,15 +38,15 @@ Add the following content:
 Note the metadata is stored in the file, not a separate YAML file. Each file requires metadata section even if it 
 is empty! Compile and browse the site:
 
-    # preview cleans, compiles, then runs nanoc's autocompiler
-    % rake preview
+    % rake clean && nanoc3 compile
+    % nanoc3 aco
     
-Point your browser to http://localhost:3000
+Browse http://localhost:3000 to see your site.
 
 
 ## Deploying
 
-Simply copy `content/*` to your public folder of your site. It's that easy.
+Simply copy `ouput/*` to the public folder of your (hosted) web server. It's that easy.
     
 ## Naming Conventions
 
@@ -61,6 +61,7 @@ your posts.
 ## FAQ
 
 Q. Why are my pages not rolling to the front page?
-A. The date must be encoded in the path of the file. The front page selects N newest files as featured articles based
-on the date convention.
+
+A. You must set `title: Some title`, `kind: article` and `created_at: 2010/01/01` in the metadata section of the file.
+Every file in `content/` must have a metadata section.
 
