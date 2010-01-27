@@ -11,7 +11,7 @@ def route_path(item)
   end
 end
 
-# Creates tag pages from partial: layouts/_tag_page.haml
+# Creates in-memory tag pages from partial: layouts/_tag_page.haml
 def create_tag_pages
   tag_set(items).each do |tag|
     items << Nanoc3::Item.new(
@@ -21,6 +21,7 @@ def create_tag_pages
     )
   end
 end
+
 
 
 # I prefer to use file names for date so it is visible in git, but date can also be set in meta section of 
