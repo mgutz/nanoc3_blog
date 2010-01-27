@@ -11,7 +11,7 @@ This is a customized [nanoc3](http://nanoc.stoneship.org/) blog site. Features:
   
 ## Installation
 
-This site compiles under Ruby 1.9.1 :)
+Ruby >= 1.8.7 is required to properly compile the site. One of the dependent gems is not Ruby 1.8.6 friendly. I recommend using [rvm](http://rvm.beginrescueend.com/) to easily switch ruby binaries to either Ruby 1.8.7 or Ruby 1.9.1 before compiling the site.
 
     % gem install rack rake mime-types nanoc3 haml
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
