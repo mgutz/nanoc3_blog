@@ -5,14 +5,16 @@ preprocess do
   add_missing_info
 end
 
+compile '/assets/css/*/' do
+  filter :sass
+end
 
 compile '*' do
   filter_map = { 
     '.erb' => :erb, 
+    '.haml' => :haml,
     '.md' => :bluecloth,
     '.markdown' => :bluecloth,
-    '.haml' => :haml,
-    '.sass' => :sass,
     nil => :haml
   }
   
