@@ -1,6 +1,7 @@
 include Nanoc3::Helpers::Rendering
 include Nanoc3::Helpers::Blogging
 require 'time'
+require 'fileutils'
 
 # Hyphens are converted to sub-directories in the output folder. 
 def route_path(item)
@@ -24,10 +25,13 @@ end
 
 
 
-# I prefer to use file names for date so it is visible in git, but date can also be set in meta section of 
-# file. 
+# Dates may be encoded in the filename instead of the meta section at the top of each file.
 def add_missing_info
   items.each do |item|
+    if item[:file]
+      # nanoc3 >= 3.1 will have this feature, add for older versions
+      item[:extension] ||= item[:file].path.match(/\..*$/)[0]
+    end
     next if item[:kind] != "article"
     item[:created_at] ||= derive_created_at(item)
     # sometimes nanoc3 stores created_at as Date instead of String causing a bunch of issues

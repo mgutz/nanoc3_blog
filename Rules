@@ -1,33 +1,34 @@
 #!/usr/bin/env ruby
 
-require 'pp'
-
 preprocess do
   create_tag_pages
   add_missing_info
 end
 
-compile '/assets/css/*/' do
-  filter :sass
+
+compile '*' do
+  filter_map = { 
+    '.erb' => :erb, 
+    '.md' => :bluecloth,
+    '.markdown' => :bluecloth,
+    '.haml' => :haml,
+    '.sass' => :sass,
+    nil => :haml
+  }
+  
+  file_filter = filter_map[item[:extension]]
+  raise "Filter is not configured for file extension #{item[:extension]} in Rules file." if file_filter.nil?
+  
+  filter file_filter
+  layout 'default'
 end
 
 route '/assets/css/*/' do
   item.identifier.chop + '.css'
 end
 
-compile 'showcase/*' do
-  filter :haml
-  layout 'showcase'
-end
-
-compile '*' do
-  filter :haml
-  layout 'default'
-end
-
 route '*' do
   route_path(item)
 end
-
 
 layout '*', :haml

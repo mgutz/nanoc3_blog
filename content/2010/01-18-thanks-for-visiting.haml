@@ -15,7 +15,7 @@ kind: article
 
 %ul
   %li Minimalist CSS site
-  %li HAML/SASS for markup and stylesheets
+  %li Uses file extension to determine filter: { '.erb' => :erb, '.md' => :bluecloth, '.markdown' => :bluecloth,'.haml' => :haml, '.sass' => :sass, nil => :haml}
   %li Automatically displays the newest posts on the front page
   %li Tagging / generation of tag pages
   %li Generates archive pages
