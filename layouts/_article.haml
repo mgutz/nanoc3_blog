@@ -3,7 +3,7 @@
 
 .article
   .title
-    %a(href="#{route_path(item)}" class="permalink")= item[:title]
+    %a(href="#{route_path(item)}" title="Full article" class="permalink")= item[:title]
   .body
     != content || partial(item)
   = render('_meta', :item => item)
