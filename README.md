@@ -25,11 +25,10 @@ Edit `config.yaml`
 
 ### DISQUS comments
 
-DISQUS comment service allows users to post comments on your static site. Please go to their [site](http://disqus.com) to
-register their site. Once you have registered a site, simply uncomment and adjust `disqus_shortname` in `config.yaml`
+DISQUS comment service allows users to post comments on your static site. As such, you must register your site on [site](http://disqus.com) to
+use their service. Once registered, simply uncomment and adjust `disqus_shortname` in `config.yaml`. Uncommenting this setting
+enables comments in articles.
 
-This feature is disabled by default.
-    
 ## Usage
 
 ### Adding Content
