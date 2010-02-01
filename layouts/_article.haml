@@ -1,5 +1,6 @@
 ---
 ---
+
 .article
   .title
     %a(href="#{route_path(item)}" class="permalink")= item[:title]
@@ -9,6 +10,9 @@
     .meta
       %ul.tags
         %li= pretty_time(item[:created_at])
+        - if disqus_shortname 
+          %li
+            %a(href="#{route_path(item)}#disqus_thread")
         - if item[:tags]
           - item[:tags].sort.each do |tag|
             %li

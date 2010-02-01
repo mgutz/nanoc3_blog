@@ -120,6 +120,10 @@ def excerpt_count
   @config[:excerpt_count].to_i
 end
 
+def disqus_shortname 
+  @config[:disqus_shortname]
+end
+
 def to_month_s(month)
   Date.new(2010, month).strftime("%B")
 end

@@ -7,14 +7,28 @@ This is a customized [nanoc3](http://nanoc.stoneship.org/) blog site. Features:
 3. Rolls/archives articles to front page.
 4. Generates tag pages.
 5. Minimalist styling.
+6. Uses SASS color manipulation functions. (unfortunately these functions have not yet made it into a release, must use HAML github repo)
+7. DISQUS integration.
 
-  
 ## Installation
 
 Ruby >= 1.8.7 is required to properly compile the site. One of the dependent gems is not Ruby 1.8.6 friendly. I recommend using [rvm](http://rvm.beginrescueend.com/) to easily switch ruby binaries to either Ruby 1.8.7 or Ruby 1.9.1 before compiling the site.
 
+SASS Color manipulation functions are used within the stylesheet which requires the haml version from github.
+
     % gem install rack rake mime-types nanoc3 haml bluecloth
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
+
+## Configuration
+
+Edit `config.yaml`
+
+### DISQUS comments
+
+DISQUS comment service allows users to post comments on your static site. Please go to their [site](http://disqus.com) to
+register their site. Once you have registered a site, simply uncomment and adjust `disqus_shortname` in `config.yaml`
+
+This feature is disabled by default.
     
 ## Usage
 

@@ -1,0 +1,16 @@
+---
+---
+
+- if disqus_shortname
+  .comments
+    #disqus_thread
+    %script(type="text/javascript" src="http://disqus.com/forums/#{disqus_shortname}/embed.js")
+    %noscript
+      %a(href="http://disqus.com/forums/#{disqus_shortname}/?url=ref")
+        View the discussion thread
+
+  /* disqus adds too much visual crap
+  %style(type="text/css")
+    :sass
+      .dsq-dc-logo
+        display: none !important

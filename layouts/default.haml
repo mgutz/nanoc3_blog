@@ -8,6 +8,9 @@
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     %meta(name="keywords" content="#{tag_set.join(', ')}") 
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
+    :javascript
+      var disqus_developer = 1;
+
   %body
     - content = yield
     
@@ -33,6 +36,7 @@
 
       - if @item[:kind] == 'article'
         = render('_article', :item => @item, :content => content)
+        = render('_disqus', :item => @item)
         = render('_other_articles_nav', :reference_item => @item)
       - else
         = content

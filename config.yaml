@@ -10,3 +10,5 @@ featured_count: 2
 excerpt_count: 0
 # number of other articles to reference at bottom of each article
 other_articles_max: 3
+# DISQUS Site Shortname 
+#disqus_shortname: mgutz-blog
