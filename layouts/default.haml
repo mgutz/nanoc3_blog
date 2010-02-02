@@ -4,13 +4,11 @@
 %html
   %head
     %title 
-      = "mgutz.com - #{@item[:title]}"
+      = "nanoc3-blog.mgutz.com - #{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     %meta(name="keywords" content="#{tag_set.join(', ')}") 
     %link(href="/assets/css/reset.css" media="screen" rel="stylesheet" type="text/css")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
-    :javascript
-      var disqus_developer = 1;
 
   %body
     - content = yield
@@ -19,9 +17,9 @@
       #header 
         .logo
           - if is_front_page?
-            mgutz
+            nanoc3_blog
           -else
-            %a(href='/') &laquo; mgutz
+            %a(href='/') &laquo; nanoc3_blog
         #nav
           %ul
             - if @item.identifier != '/about/'

@@ -20,4 +20,4 @@ excerpt_count: 6
 other_articles_max: 3
 
 # DISQUS Site Shortname (enables commenting)
-disqus_shortname: mgutz-blog
+disqus_shortname: nanoc3-blog

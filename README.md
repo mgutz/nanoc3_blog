@@ -1,6 +1,10 @@
 # nanoc3_blog
 
-This is a customized [nanoc3](http://nanoc.stoneship.org/) blog site. Features:
+This is a [nanoc3](http://nanoc.stoneship.org/) blog starter kit. 
+
+View this project on [nanoc3-blog.mgutz.com](http://nanoc3-blog.mgutz.com/).
+
+Features:
 
 1. Uses the appropriate filter based on the file extension: .erb -> ERB, .haml -> HAML, .md, .markdown -> BlueCloth, .sass -> SASS
 2. Uses the filesystem_combined datasource, so a separate .yaml metadata file is not needed for each item.
@@ -9,6 +13,8 @@ This is a customized [nanoc3](http://nanoc.stoneship.org/) blog site. Features:
 5. Minimalist styling.
 6. Uses SASS color manipulation functions. (unfortunately these functions have not yet made it into a release, must use HAML github repo)
 7. DISQUS integration.
+
+
 
 ## Installation
 
@@ -59,6 +65,10 @@ section. Compile and browse the site:
     % nanoc3 aco
     
 Browse http://localhost:3000 to see generated site.
+
+### Static Files
+
+Put static files in the `assets/` folder instead of `content/`. `assets/` is copied recursively into the `output/` folder.
 
 
 ## Deploying
