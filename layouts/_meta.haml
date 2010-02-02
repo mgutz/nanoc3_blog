@@ -6,8 +6,11 @@
       %li= pretty_time(item[:created_at])
       - if disqus_shortname 
         %li
+          &middot;
+        %li
           %a(href="#{route_path(item)}#disqus_thread")
       - if item[:tags]
+        %li &middot;
         - item[:tags].sort.each do |tag|
           %li
             %a(href="/tags/#{tag}/" class='tag')
