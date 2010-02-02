@@ -2,38 +2,48 @@
 ---
 
 = sans
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family: Arial, Verdana, “Lucida Sans”, “Lucida Grande”, “Lucida Sans Unicode”, sans-serif
   
 = serif
-  font-family: Cambria, Georgia, Times, "Times New Roman", serif
+  font-family: Palatino, “Palatino Linotype”, Georgia, Times, “Times New Roman”, serif  
   
 = monospace
   font-family: Consolas, Menlo, Monaco, Courier New, monospace
 
-/* Change base color
+!bg_color = #FFF
+
+/ Change base color
 !base_color = #000
 !base10 = lighten(!base_color, 10%)
 !base20 = lighten(!base_color, 20%)
 !base30 = lighten(!base_color, 30%)
 !base40 = lighten(!base_color, 40%)
 !normal_color = !base10
-!passive_color = lighten(!base_color, 65%)
+!passive_color = #BCC8BA
 !attention_color = !base_color
-/* Change alternate color
-!alternate_color = #92000A
+
+/ Change alternate color
+!alternate_color = #5D90CD
    
 !link_base = !alternate_color
 !link_hover_color = !link_base
 !link_color = lighten(!link_base, 5%)
+
+!tag_color = #AF956F
+/!tag_color = !alternate_color
   
 *
   +serif
   color = !normal_color
 
-
 body
-  font-size: 100%
-  background: #fff
+  background = !bg_color url('../images/ribbon.gif') repeat-y  800px 30px
+  font-size: 108%
+  margin-left: 40px
+  width: 720px
+  
+
+  
 
 a
   color = !link_color
@@ -59,27 +69,22 @@ h1, h2, h3, h4, .title, .logo, .medium-link
   
 pre
   background-color: #f8f8f8
-  border-left: 3px double #ccc
+  border-left = 3px double !passive_color
   padding: 1em
 
 ul, ol
   list-style-type: square
+  padding-left: 30px
   li
-    padding: .25em
+    padding-bottom: .3em
   
 ol, ul, pre
   margin-bottom: 1.5em
   
-.body
-  li
-    margin-left: 20px
-   
-#main
-  margin: auto
-  width: 720px
-  p
-    margin-bottom: 1.5em
-    line-height: 1.24em
+p
+  margin-bottom: 1.5em
+  line-height: 1.24em
+       
 
 #header
   overflow: auto
@@ -108,7 +113,7 @@ ol, ul, pre
     
   
 .title
-  border-bottom: 1px solid #f4f4f4
+  border-bottom = 1px solid #eee 
   font-size: 1.4em
   padding-bottom: 6px
   margin-bottom: .7em
@@ -118,7 +123,24 @@ ol, ul, pre
     color = !attention_color
     margin: 0
     padding: 0
-    background: white
+h2
+  font-size: 1.4em
+  margin-bottom: .7em
+
+.year
+  h2
+    margin: 0
+.month
+  h2
+    margin: 0
+  
+h3
+  font-size: 1.2em
+  margin-bottom: .6em
+
+h4
+  font-size: 1em
+  margin-bottom: .5em
     
 #other-articles
   margin-top: 0.5em
@@ -141,13 +163,16 @@ ol, ul, pre
 .meta
   font-size: 0.9em 
   ul
+    margin: 0px
+    padding-left: 0
     li
       color = !passive_color
       display: inline
 
 ul.medium-links
-  padding-bottom: 1.2em
+  padding: 0 0 1.2em 0
   list-style-type: none
+  
   li
     padding-bottom: 0.3em
   a
@@ -163,12 +188,19 @@ ul.medium-links
 
 .clear
   clear: both
+
+  
+.article, .excerpt, .featured
+  margin-bottom: 2em
   
 .featured
-  margin-bottom: 3em
-
+/  margin: -1em -1em 1em -1em
+/  padding: 1em 1em 2px 1em
+/  background-color: #ffe 
+/  border = 3px double desaturate(!alternate_color, 50%)
+  
 #sticky
-  border: 3px double #eee
+  /border: 3px dashed #eee
   margin-bottom: 3em  
   .body
     margin: auto
@@ -179,28 +211,38 @@ ul.medium-links
 
 .archives
   .year
-    margin-bottom: 3em
+    margin-bottom: 2em
     h2
       color = !base10
       +serif
       font-size: 2em
-      margin-bottom: 1em
+      margin-bottom: .5em
   .month
     h2
       color = !base20
       +serif
       font-size: 1.6em
   ul
+    padding: 0
     list-style-type: none
+.tags
+  text-transform: lowercase
     
 .tag
-  background-color = lighten(!link_base, 65%)
+  color = !tag_color !important
   padding: 0 .1em 0
       
 .tags-page
   ul
+    padding: 0
     list-style-type: none
-
-
+    
 .excerpt
-  padding-bottom: 1.1em
+  margin-bottom: 1.5em
+  .title
+    font-size: 1.1em
+    border: none
+    margin-bottom: .2em
+  .body
+    p
+      margin-bottom: .5em

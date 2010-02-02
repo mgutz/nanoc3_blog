@@ -3,12 +3,12 @@ title: Mario Gutierrez, Open-Source Technologist
 ---
 
 
-#sticky
-  - item = item_by_identifier('/sticky/')
-  - if item[:title]
-    .title= item[:title]
-  .body
-    != partial(item)
+/#sticky
+/  - item = item_by_identifier('/sticky/')
+/  - if item[:title]
+/    .title= item[:title]
+/  .body
+/    != partial(item)
 
 - oldest_item = nil
 - current_index = 0
@@ -23,7 +23,7 @@ title: Mario Gutierrez, Open-Source Technologist
   - oldest_item = item
   = render('_excerpt', :item => item) 
                 
-= render('_other_articles_nav', :reference_item => oldest_item, :older_only => true)
+/= render('_other_articles_nav', :reference_item => oldest_item, :older_only => true)
 
 .clear
 

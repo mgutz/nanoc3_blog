@@ -14,7 +14,7 @@ base_url: http://mgutz.com
 featured_count: 1
 
 # number of excerpted posts to display on front
-excerpt_count: 2
+excerpt_count: 6
 
 # number of other articles to reference at bottom of each article
 other_articles_max: 3
