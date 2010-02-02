@@ -7,6 +7,9 @@ data_sources:
 
 # Custom settings
 
+# domain to which this site is deployed
+base_url: http://mgutz.com
+
 # number of full featured posts to display on front
 featured_count: 1
 

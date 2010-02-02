@@ -7,6 +7,7 @@
       = "mgutz.com - #{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     %meta(name="keywords" content="#{tag_set.join(', ')}") 
+    %link(href="/assets/css/reset.css" media="screen" rel="stylesheet" type="text/css")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
     :javascript
       var disqus_developer = 1;
@@ -25,13 +26,13 @@
           %ul
             - if @item.identifier != '/about/'
               %li
-                %a(href='/about/') about
+                %a(href='/about.html') about
             - if @item.identifier != '/archives/'
               %li
-                %a(href='/archives/') archives
+                %a(href='/archives.html') archives
             - if @item.identifier != '/tags/'
               %li
-                %a(href='/tags/') tags
+                %a(href='/tags.html') tags
       .clear
 
       - if @item[:kind] == 'article'

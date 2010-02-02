@@ -22,7 +22,7 @@ compile '*' do
   raise "Filter is not configured for file extension #{item[:extension]} in Rules file." if file_filter.nil?
   
   filter file_filter
-  layout 'default'
+  layout 'default' unless item[:layout] == "none"
 end
 
 route '/assets/css/*/' do

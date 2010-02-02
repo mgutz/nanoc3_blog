@@ -1,15 +1,43 @@
 include Nanoc3::Helpers::Rendering
 include Nanoc3::Helpers::Blogging
-require 'time'
+include Nanoc3::Helpers::XMLSitemap
+require 'builder'
 require 'fileutils'
+require 'time'
 
-# Hyphens are converted to sub-directories in the output folder. 
+# Hyphens are converted to sub-directories in the output folder.
+#
+# If a file has two extensions like Rails naming conventions, then the first extension
+# is used as part of the output file.
+#
+#   sitemap.xml.erb # => sitemap.xml
+#
+# If the output file does not end with an .html extension, item[:layout] is set to 'none'
+# bypassing the use of layouts.
+# 
 def route_path(item)
-  if item.identifier.include?('-')
-    item.identifier.split('-').join('/').chop + '.html' # /2010/01/01-some_title.haml -> /2010/01/01/some_title.html
+  # in-memory items have not file
+  return item.identifier + "index.html" if item[:file].nil?
+  
+  url = item[:file].path.gsub(/^content/, '')
+  
+  # if 2 extensions, use first extension as the output file
+  if url.match(/(\.[a-zA-Z0-9]+){2}$/)
+    url.gsub!(item[:extension], '')
   else
-    item.identifier + 'index.html'                      # /2010/ => /2010/index.html
+    url.gsub!(item[:extension], '.html')
   end
+  
+  if url.include?('-')
+    url = url.split('-').join('/')                # /2010/01/01-some_title.html -> /2010/01/01/some_title.html
+  end
+
+  # used in Rules to bypass layout
+  if File.extname(url) != ".html"
+    item[:layout] = "none"
+  end
+
+  url
 end
 
 # Creates in-memory tag pages from partial: layouts/_tag_page.haml
@@ -23,14 +51,12 @@ def create_tag_pages
   end
 end
 
-
-
 # Dates may be encoded in the filename instead of the meta section at the top of each file.
 def add_missing_info
   items.each do |item|
     if item[:file]
       # nanoc3 >= 3.1 will have this feature, add for older versions
-      item[:extension] ||= item[:file].path.match(/\..*$/)[0]
+      item[:extension] ||= File.extname(item[:file].path)
     end
     next if item[:kind] != "article"
     item[:created_at] ||= derive_created_at(item)

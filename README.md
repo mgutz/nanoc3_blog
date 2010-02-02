@@ -23,9 +23,9 @@ SASS Color manipulation functions are used within the stylesheet which requires 
 
 Edit `config.yaml`
 
-### DISQUS comments
+### Commenting
 
-DISQUS comment service allows users to post comments on your static site. As such, you must register your site on [site](http://disqus.com) to
+DISQUS comment service allows users to post comments on your static site. As such, one must register your site on [DISQUS](http://disqus.com) to
 use their service. Once registered, simply uncomment and adjust `disqus_shortname` in `config.yaml`. Uncommenting this setting
 enables comments in articles.
 
@@ -63,7 +63,7 @@ Browse http://localhost:3000 to see generated site.
 
 ## Deploying
 
-Copy `ouput/*` to the public folder of your (hosted) web server.
+Copy `output/*` to the public folder of your (hosted) web server.
     
 ## Naming Conventions
 
@@ -75,6 +75,16 @@ your posts.
     2010/01-01-post.haml #=> 2010/01/01/post.html
     2010/01/01-post.haml #=> 2010/01/01/post.html
     
+Files may follow Rails naming conventions, in which the first extension is retained for the output file
+and the second determines the template processor:
+
+    sitemap.xml.erb #=> generate sitemap.xml using erb processor
+    
+If a single extension is used, then the files are assumed to be CSS and HTML:
+    
+    .sass #=> .css
+    .* #=> .html
+
 ## FAQ
 
 Q. Why are my pages not rolling to the front page?

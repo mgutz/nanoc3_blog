@@ -33,7 +33,7 @@ title: Mario Gutierrez, Open-Source Technologist
   all:
   - tags.each.sort_by {|k,v| k}.each do |tag_count|
     - tag = tag_count[0]
-    %a(href="/tags/#{tag}/" class='bottom')= tag
+    %a(href="/tags/#{tag}/" class='tag')= tag
 
 :javascript
   (function() {

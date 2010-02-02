@@ -5,8 +5,8 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   
 = serif
-  font-family: Georgia, Palatino, Times, 'Times New Roman', serif
-
+  font-family: Cambria, Georgia, Times, "Times New Roman", serif
+  
 = monospace
   font-family: Consolas, Menlo, Monaco, Courier New, monospace
 
@@ -16,69 +16,15 @@
 !base20 = lighten(!base_color, 20%)
 !base30 = lighten(!base_color, 30%)
 !base40 = lighten(!base_color, 40%)
-!normal_color = lighten(!base_color, 20%)
-!passive_color = lighten(!base_color, 60%)
+!normal_color = !base10
+!passive_color = lighten(!base_color, 65%)
 !attention_color = !base_color
 /* Change alternate color
-!alternate_color = #0070FF   
+!alternate_color = #92000A
+   
 !link_base = !alternate_color
 !link_hover_color = !link_base
-!link_color = lighten(!link_base, 15%)
-
-
-/* BEGIN Eric Meyer Reset CSS
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
-  margin: 0
-  padding: 0
-  border: 0
-  outline: 0
-  font-size: 100%
-  vertical-align: baseline
-  background: transparent
-
-
-body
-  line-height: 1
-
-
-ol, ul
-  list-style: none
-
-
-blockquote, q
-  quotes: none
-
-
-blockquote
-  &:before, &:after
-    content: ''
-    content: none
-
-
-q
-  &:before, &:after
-    content: ''
-    content: none
-
-
-\:focus
-  outline: 0
-
-
-ins
-  text-decoration: none
-
-
-del
-  text-decoration: line-through
-
-
-table
-  border-collapse: collapse
-  border-spacing: 0
-  
-/* END Reset CSS
-
+!link_color = lighten(!link_base, 5%)
   
 *
   +serif
@@ -141,7 +87,7 @@ ol, ul, pre
   .logo
     float: left
     font-size: 2.5em
-    color = !alternate_color
+    color = darken(!alternate_color, 5%)
     a
       +sans
       color = !alternate_color
@@ -162,7 +108,7 @@ ol, ul, pre
     
   
 .title
-  border-bottom: 1px solid #eee
+  border-bottom: 1px solid #f4f4f4
   font-size: 1.4em
   padding-bottom: 6px
   margin-bottom: .7em
@@ -175,7 +121,7 @@ ol, ul, pre
     background: white
     
 #other-articles
-  margin-top: 3em
+  margin-top: 0.5em
   .title
     border: none
     font-size: 1em
@@ -203,7 +149,7 @@ ul.medium-links
   padding-bottom: 1.2em
   list-style-type: none
   li
-    padding-bottom: 0.5em
+    padding-bottom: 0.3em
   a
     +sans
     color = !attention_color
@@ -211,17 +157,9 @@ ul.medium-links
     font-weight: bold
     
 #taglist
+  font-size: .8em
   margin-top: 3em
   text-align: right
-  color = lighten(!passive_color, 20%)
-  a
-    color = lighten(!link_color, 15%)
-    &:link, &:visited
-      color = lighten(!link_color, 15%)
-
-    &:hover
-      color = !link_hover_color
-      text-decoration: underline
 
 .clear
   clear: both
@@ -254,6 +192,10 @@ ul.medium-links
       font-size: 1.6em
   ul
     list-style-type: none
+    
+.tag
+  background-color = lighten(!link_base, 65%)
+  padding: 0 .1em 0
       
 .tags-page
   ul
