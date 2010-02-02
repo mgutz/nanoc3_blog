@@ -3,12 +3,12 @@ title: Mario Gutierrez, Open-Source Technologist
 ---
 
 
-/#sticky
-/  - item = item_by_identifier('/sticky/')
-/  - if item[:title]
-/    .title= item[:title]
-/  .body
-/    != partial(item)
+#sticky
+  - item = item_by_identifier('/sticky/')
+  - if item[:title]
+    .title= item[:title]
+  .body
+    != partial(item)
 
 - oldest_item = nil
 - current_index = 0
