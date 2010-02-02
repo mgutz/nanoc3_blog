@@ -8,7 +8,7 @@ data_sources:
 # Custom settings
 
 # domain to which this site is deployed
-base_url: http://mgutz.com
+base_url: http://nanoc3-blog.mgutz.com
 
 # number of full featured posts to display on front
 featured_count: 1
