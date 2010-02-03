@@ -31,6 +31,8 @@
             - if @item.identifier != '/tags/'
               %li
                 %a(href='/tags.html') tags
+            %li
+              %a(href='/atom.xml') rss
       .clear
 
       - if @item[:kind] == 'article'
