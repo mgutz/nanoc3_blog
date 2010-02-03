@@ -68,7 +68,7 @@ Browse http://localhost:3000 to see generated site.
 
 ### Static Files
 
-Put static files in the `assets/` folder instead of `content/`. `assets/` is copied recursively into the `output/` folder.
+Put static files into the `static/` folder instead of `content/`. `static/*` is copied to the `output/` folder on compile and preview.
 
 
 ## Deploying

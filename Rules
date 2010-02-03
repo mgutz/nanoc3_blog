@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 preprocess do
-  cp_r_static_assets
+  copy_static
   create_tag_pages
   add_missing_info
 end

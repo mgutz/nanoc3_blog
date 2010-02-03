@@ -66,9 +66,8 @@ def add_missing_info
 end
 
 # Copy static assets outside of content instead of having nanoc3 process them.
-def cp_r_static_assets
-  FileUtils.mkdir_p 'output/assets'
-  FileUtils.cp_r 'assets/', 'output/' 
+def copy_static
+  FileUtils.cp_r 'static/.', 'output/' 
 end
 
 def partial(identifier_or_item)
