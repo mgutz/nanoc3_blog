@@ -51,6 +51,7 @@ def create_tag_pages
   end
 end
 
+
 # Dates may be encoded in the filename instead of the meta section at the top of each file.
 def add_missing_info
   items.each do |item|
