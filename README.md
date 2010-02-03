@@ -73,8 +73,12 @@ Put static files into the `static/` folder instead of `content/`. `static/*` is 
 
 ## Deploying
 
-Copy `output/*` to the public folder of your (hosted) web server.
-    
+Copy `output/*` to the public folder of your web server.
+
+Or, if you like command line and your host provides SSH access, do something like this:
+
+    % rsync -ave ssh output/ mgutz_com:www/
+     
 ## Naming Conventions
 
 Hyphens in file names are converted to subdirectories in the output. You decide how you want to organize
