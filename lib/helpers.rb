@@ -139,6 +139,10 @@ def n_older_articles(n, reference_item)
 end
 
 
+def site_name
+  @config[:site_name]
+end
+
 def pretty_time(time)
   Time.parse(time).strftime("%b %d, %Y") if !time.nil?
 end

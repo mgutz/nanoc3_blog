@@ -27,7 +27,10 @@ SASS Color manipulation functions are used within the stylesheet which requires 
 
 ## Configuration
 
-Edit `config.yaml`
+Edit these files:
+
+    config.yaml
+    atom.xml.erb
 
 ### Commenting
 

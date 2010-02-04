@@ -16,9 +16,9 @@
       #header 
         .logo
           - if is_front_page?
-            nanoc3_blog 
+            = site_name
           -else
-            %a(href='/') &laquo; nanoc3_blog 
+            %a(href='/')= "&laquo; #{site_name}"
         #nav
           %ul
             - if @item.identifier != '/about/'
