@@ -5,29 +5,30 @@
   font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
   
 = serif
-  font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
+  //font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
+  font-family: Georgia, Utopia, Palatino, 'Palatino Linotype', serif
   
 = monospace
   font-family: Consolas, Menlo, Monaco, Courier New, monospace
 
 // Change base color
 !base_color = #222
-!base10 = lighten(!base_color, 10%)
-!base20 = lighten(!base_color, 20%)
-!base30 = lighten(!base_color, 30%)
-!base40 = lighten(!base_color, 40%)
-!normal_color = !base30
-!passive_color = !base40
-!attention_color = !base20
+!base1 = lighten(!base_color, 5%)
+!base2 = lighten(!base_color, 10%)
+!base3 = lighten(!base_color, 15%)
+!base4 = lighten(!base_color, 20%)
+!normal_color = !base2
+!passive_color = !base4
+!attention_color = !base1
 
 // Change alternate color
-!alternate_color = #000000
+!alternate_color = #00f
    
 !link_base = !alternate_color
 !link_hover_color = !link_base
 !link_color = lighten(!link_base, 5%)
 
-!tag_color = !alternate_color
+!tag_color = !link_base
 !logo_color = #800
   
 *
@@ -36,7 +37,7 @@
 
 body
   background-color: #fff
-  font-size: 95%
+  font-size: 96% 
   margin: auto
   width: 720px
   
@@ -59,18 +60,16 @@ code, pre
 h1, h2, h3, h4, .title, .logo, .medium-link
   +sans
   color = !attention_color
+  margin-bottom: .7em
   
 h2
   font-size: 1.4em
-  margin-bottom: .7em
 
 h3
   font-size: 1.2em
-  margin-bottom: .6em
 
 h4
   font-size: 1em
-  margin-bottom: .5em
   
 pre
   background-color: #f8f8f8
@@ -84,10 +83,10 @@ ol, ul
     padding-bottom: .3em
   
 ol, ul, p, pre
-  margin-bottom: 1.5em
+  margin-bottom: 1.44em
   
 p
-  line-height: 1.24em
+  line-height: 1.36em
        
 
 #header
@@ -151,7 +150,7 @@ p
   color = !passive_color
 
 .meta
-  font-size: 0.9em 
+  font-size: 0.8em 
   ul
     margin: 0px
     padding-left: 0
@@ -185,7 +184,7 @@ ul.medium-links
   
 #sticky
   border: 3px double #eee
-  margin-bottom: 3em  
+  margin-bottom: 3.2em  
   .body
     margin: auto
     text-align: center
@@ -197,13 +196,13 @@ ul.medium-links
   .year
     margin-bottom: 2em
     h2
-      color = !base10
+      color = !base1
       +serif
       font-size: 2em
       margin-bottom: .5em
   .month
     h2
-      color = !base20
+      color = !base2
       +serif
       font-size: 1.6em
   ul
