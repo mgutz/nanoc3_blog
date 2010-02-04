@@ -11,18 +11,24 @@
 = monospace
   font-family: Consolas, Menlo, Monaco, Courier New, monospace
 
+= ul_left 
+  ul
+    padding: 0
+    list-style-type: none
+
 // Change base color
-!base_color = #222
+!base_color = #101010
 !base1 = lighten(!base_color, 5%)
 !base2 = lighten(!base_color, 10%)
 !base3 = lighten(!base_color, 15%)
 !base4 = lighten(!base_color, 20%)
-!normal_color = !base2
-!passive_color = !base4
+!normal_color = !base1
+!passive_color = lighten(!base_color, 40%)
 !attention_color = !base1
 
 // Change alternate color
 !alternate_color = #00f
+//!alternate_color = #5da6cf
    
 !link_base = !alternate_color
 !link_hover_color = !link_base
@@ -35,11 +41,24 @@
   +serif
   color = !normal_color
 
+html
+  //border-top: 9px solid #000000
+  //background-color: #93d8ff
+  //padding: 12px 12px 12px
+
 body
-  background-color: #fff
+  //background-color: #fff
   font-size: 96% 
+  //border-top: 1px solid #5da6cf
+  min-width: 800px
+  //margin: auto
+  //width: 720px
+
+#main
   margin: auto
   width: 720px
+  padding: 3em 0
+  
   
 a
   color = !link_color
@@ -57,9 +76,26 @@ code, pre
   color = !normal_color
   +monospace
 
-h1, h2, h3, h4, .title, .logo, .medium-link
+h1, h2, h3, h4
   +sans
   color = !attention_color
+  margin-bottom: .7em
+  a
+    +sans
+    color = !attention_color !important
+
+.logo
+  +sans
+  color = !logo_color
+  margin-bottom: .7em
+  a
+    +sans
+    color = !logo_color !important
+
+h1
+  font-size: 1.6em
+  font-weight: bold
+  padding-bottom: 6px
   margin-bottom: .7em
   
 h2
@@ -77,7 +113,7 @@ pre
   padding: 1em
 
 ol, ul
-  list-style-type: square
+  list-style-type: disc 
   padding-left: 30px
   li
     padding-bottom: .3em
@@ -90,8 +126,8 @@ p
        
 
 #header
+  margin-bottom: 2em
   overflow: auto
-  margin: 3em 0 3em 0
   .logo
     float: left
     font-size: 2.5em
@@ -111,33 +147,11 @@ p
   .byline
     color = !passive_color
 
-.title
-  font-size: 1.6em
-  font-weight: bold
-  padding-bottom: 6px
-  margin-bottom: .7em
-  
-  a
-    +sans
-    color = !attention_color
-    margin: 0
-    padding: 0
-
-.year
-  h2
-    margin: 0
-.month
-  h2
-    margin: 0
-  
-    
 #other-articles
   margin-top: 0.5em
-  .title
-    border: none
-    font-size: 1em
-    font-weight: none
-    margin: 0
+  +ul_left
+  h3
+    margin-bottom: .2em
 
 .older
   float: left
@@ -158,18 +172,6 @@ p
       color = !passive_color
       display: inline
 
-ul.medium-links
-  padding: 0 0 1.2em 0
-  list-style-type: none
-  
-  li
-    padding-bottom: 0.3em
-  a
-    +sans
-    color = !attention_color
-    font-size: 1em
-    font-weight: bold
-    
 #taglist
   font-size: .8em
   margin-top: 3em
@@ -178,7 +180,6 @@ ul.medium-links
 .clear
   clear: both
 
-  
 .article, .excerpt, .featured
   margin-bottom: 2.5em
   
@@ -205,9 +206,8 @@ ul.medium-links
       color = !base2
       +serif
       font-size: 1.6em
-  ul
-    padding: 0
-    list-style-type: none
+  +ul_left 
+
 .tags
   text-transform: lowercase
     
@@ -216,15 +216,12 @@ ul.medium-links
   padding: 0 .1em 0
       
 .tags-page
-  ul
-    padding: 0
-    list-style-type: none
+  +ul_left
     
 .excerpt
-  .title
-    font-size: 1.1em
-    border: none
-    margin-bottom: .3em
-  .body
-    p
-      margin-bottom: .5em
+  margin-bottom: 1.4em 
+  h3
+    margin-bottom: .3em 
+  p
+    color = !passive_color 
+    margin-bottom: .5em

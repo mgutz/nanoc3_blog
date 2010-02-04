@@ -30,7 +30,7 @@ title: nanoc3 blog starter kit
 -# for SEO, but make it disappear
 #taglist.passive
   - tags = count_tags()
-  all:
+  \::
   - tags.each.sort_by {|k,v| k}.each do |tag_count|
     - tag = tag_count[0]
     %a(href="/tags/#{tag}/" class='tag')= tag

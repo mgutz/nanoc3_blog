@@ -2,7 +2,7 @@
 ---
 
 .article
-  .title
+  %h2 
     %a(href="#{route_path(item)}" title="Full article" class="permalink")= item[:title]
   .body
     != content || partial(item)

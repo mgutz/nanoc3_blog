@@ -1,5 +1,5 @@
 ---
-title: Markdown test
+title: Markdown Test
 kind: article
 tags: [markdown]
 excerpt: Article example using Markdown syntax.

@@ -12,14 +12,13 @@
 
   %body
     - content = yield
-    
     #main
       #header 
         .logo
           - if is_front_page?
-            nanoc3_blog
+            nanoc3_blog 
           -else
-            %a(href='/') &laquo; nanoc3_blog
+            %a(href='/') &laquo; nanoc3_blog 
         #nav
           %ul
             - if @item.identifier != '/about/'
