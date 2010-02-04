@@ -4,7 +4,7 @@
 %html
   %head
     %title 
-      = "nanoc3-blog.mgutz.com - #{@item[:title]}"
+      = "#{@config[:site_title]} - #{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     %meta(name="keywords" content="#{tag_set.join(', ')}") 
     %link(href="/assets/css/reset.css" media="screen" rel="stylesheet" type="text/css")
