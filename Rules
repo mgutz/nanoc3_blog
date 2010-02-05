@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 preprocess do
+
   # quick way to unpublish an item
   items.delete_if { |item| item[:publish] == false }
 
@@ -14,18 +15,18 @@ compile '/assets/css/*/' do
 end
 
 compile '*' do
-  filter_map = { 
-    '.erb' => :erb, 
-    '.haml' => :haml,
-    '.md' => :bluecloth,
-    '.markdown' => :bluecloth,
-    nil => :haml
-  }
-  
-  file_filter = filter_map[item[:extension]]
-  raise "Filter is not configured for file extension #{item[:extension]} in Rules file." if file_filter.nil?
-  
-  filter file_filter
+  ext = item[:extension]
+
+  if ext == '.erb'
+    filter :erb
+  elsif ext == '.haml' || ext.nil?
+    filter :haml, :ugly => true
+  elsif ext == '.md' || ext == '.markdown'
+    filter :bluecloth
+  else
+    raise "Filter is not configured for #{item.identifier} in Rules file."
+  end
+
   layout 'default' unless item[:layout] == "none"
 end
 
@@ -37,4 +38,4 @@ route '*' do
   route_path(item)
 end
 
-layout '*', :haml
+layout '*', :haml, :ugly => true
