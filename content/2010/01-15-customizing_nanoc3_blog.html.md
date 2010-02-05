@@ -44,3 +44,10 @@ Preview the site
 
 Copy any of the files in `content/2010` and edit.  Use a date later than `01-18` and it will appear as the first post in your blog.
 
+## Customizing Look and Feel 
+
+To change the front page: `content/index.haml`
+
+To change the site layout: `layouts/default.haml`
+
+To style the site:  `content/assets/style.sass`
