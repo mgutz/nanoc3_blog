@@ -44,7 +44,12 @@ Preview the site
 
 Copy any of the files in `content/2010` and edit.  Use a date later than `01-18` and it will appear as the first post in your blog.
 
-## Customizing Look and Feel 
+## Customizing Existing Content
+
+Edit these two files:
+
+    content/about.haml
+    content/sticky.haml # Your whitespace are belong to us box.
 
 To change the front page: `content/index.haml`
 
