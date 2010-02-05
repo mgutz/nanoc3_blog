@@ -1,7 +1,7 @@
 ---
 title: Customizing nanoc3_blog 
 kind: article
-tags: [misc]
+tags: [nanoc3]
 created_at: 2010/01/15
 excerpt: How to customize nanoc3_blog.
 ---
