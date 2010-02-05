@@ -3,7 +3,7 @@ title: Customizing nanoc3_blog
 kind: article
 tags: [misc]
 created_at: 2010/01/15
-excerpt: Customizing nanoc3_blog Starter Kit
+excerpt: How to customize nanoc3_blog.
 ---
 
 ## Installation
