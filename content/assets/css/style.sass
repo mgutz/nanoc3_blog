@@ -6,10 +6,10 @@
   
 = serif
   //font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
-  font-family: Georgia, Utopia, Palatino, 'Palatino Linotype', serif
+  font-family: 'Palatino Linotype', Palatino, Georgia, serif
   
 = monospace
-  font-family: Consolas, Menlo, Monaco, Courier New, monospace
+  font-family: Menlo, Consolas, Courier New, monospace
 
 = ul_left 
   ul
@@ -17,25 +17,26 @@
     list-style-type: none
 
 // Change base color
-!base_color = #101010
+!base_color = #222
 !base1 = lighten(!base_color, 5%)
 !base2 = lighten(!base_color, 10%)
 !base3 = lighten(!base_color, 15%)
 !base4 = lighten(!base_color, 20%)
-!normal_color = !base1
+!normal_color = !base_color
 !passive_color = lighten(!base_color, 40%)
-!attention_color = !base1
+!attention_color = !base2
 
 // Change alternate color
 !alternate_color = #00f
 //!alternate_color = #5da6cf
    
-!link_base = !alternate_color
+//
+!link_base = #800
+!link_color = !link_base
 !link_hover_color = !link_base
-!link_color = lighten(!link_base, 5%)
 
-!tag_color = !link_base
-!logo_color = #800
+!tag_color = !link_color
+!logo_color = !base_color
   
 *
   +serif
@@ -48,7 +49,7 @@ html
 
 body
   //background-color: #fff
-  font-size: 105% 
+  font-size: 100%
   //border-top: 1px solid #5da6cf
   min-width: 820px
   //margin: auto
@@ -56,13 +57,13 @@ body
 
 #main
   margin: auto
-  width: 760px
+  width: 740px
   padding: 3em 0
   
   
 a
   color = !link_color
-  text-decoration: none
+  text-decoration: none 
   margin: 2px
 
   &:link, &:visited
@@ -80,6 +81,7 @@ h1, h2, h3, h4
   +sans
   color = !attention_color
   margin-bottom: .7em
+  font-weight: normal
   a
     +sans
     color = !attention_color !important
@@ -93,11 +95,10 @@ h1, h2, h3, h4
     color = !logo_color !important
 
 h2, h3, h4
-  color = !base4
+  color = !base2
 
 h1
   font-size: 1.6em
-  font-weight: bold
   padding-bottom: 6px
   margin-bottom: .7em
   
@@ -133,8 +134,7 @@ div, li, p
   overflow: auto
   .logo
     float: left
-    font-size: 2.5em
-    font-weight: bold
+    font-size: 2.4em
     color = !logo_color
     a
       +sans
@@ -142,7 +142,7 @@ div, li, p
     
   #nav
     float: right
-    margin-top: 14px
+    margin-top: 20px
     text-align: right
     ul
       li
@@ -187,6 +187,10 @@ div, li, p
   margin-bottom: 2.5em
   h2
     margin-top: 1.5em
+
+.article
+  h1
+    border-bottom: 1px solid #eee
   
 #sticky
   border: 3px double #eee
@@ -228,5 +232,5 @@ div, li, p
   h3
     margin-bottom: .5em 
   p
-    color = !passive_color 
+    color = !base4 
     margin-bottom: .5em

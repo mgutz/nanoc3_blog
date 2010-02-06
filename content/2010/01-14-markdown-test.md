@@ -2,7 +2,7 @@
 title: Markdown Test
 kind: article
 tags: [markdown]
-excerpt: Article example using Markdown syntax.
+excerpt: Article example using Markdown syntax
 ---
 
 Testing markdown filter.

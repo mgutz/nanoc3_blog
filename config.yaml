@@ -25,7 +25,7 @@ site_name: nanoc3_blog
 site_title: nanoc3-blog.mgutz.com
 
 # number of full featured posts to display on front
-featured_count: 1
+featured_count: 0
 
 # number of excerpted posts to display on front
 excerpt_count: 6
@@ -34,4 +34,4 @@ excerpt_count: 6
 other_articles_max: 3
 
 # DISQUS Site Shortname (enables commenting)
-disqus_shortname: nanoc3-blog
+#disqus_shortname: nanoc3-blog

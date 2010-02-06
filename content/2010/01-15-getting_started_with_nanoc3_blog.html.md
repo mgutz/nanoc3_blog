@@ -3,8 +3,12 @@ title: Getting Started With nanoc3_blog
 kind: article
 tags: [nanoc3]
 created_at: 2010/01/15
-excerpt: How to create a blog using nanoc3_blog starter kit.
+excerpt: How to create a blog using nanoc3_blog starter kit
 ---
+
+## Pre-requisites
+
+Know how to use command-line shell, `Ruby, HAML, SASS and Markdown`.
 
 ## Installation
 
@@ -36,6 +40,14 @@ Compile the site
 Preview the site
 
     http://localhost:3000
+
+If your colors do not match this example site, `content/assets/style.sass` uses color functions 
+which are not present in the current `haml 2.2.18` gem. To fix, 
+clone the `haml` source from github and set `$RUBY_LIB` in your shell init script (`.bash_profile,  .bashrc, .zshrc`).
+
+    export RUBYLIB="src/haml/lib"
+    export PATH="src/haml/bin:$PATH"
+
 
 ## Adding Content
 
