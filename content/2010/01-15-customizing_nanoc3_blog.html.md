@@ -10,15 +10,12 @@ excerpt: How to customize nanoc3_blog.
 
 From the command line
 
-    % gem install rack rake mime-types nanoc3 haml bluecloth
+    % gem install rack rake mime-types nanoc3 haml kramdown
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
 
 ## Configuration
 
-Edit
-the
-configuration
-files:
+Edit the configuration files:
 
     config.yaml
     content/atom.xml.erb

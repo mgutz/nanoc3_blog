@@ -16,7 +16,9 @@ excerpt: Welcome Article
 
 %ul
   %li Minimalist CSS site
-  %li Uses file extension to determine filter: { '.erb' => :erb, '.md' => :bluecloth, '.markdown' => :bluecloth,'.haml' => :haml, '.sass' => :sass, nil => :haml}
+  %li 
+    Uses file extension to determine filter:
+    %code {'.erb' => :erb, '.md' => :kramdown, '.markdown' => :kramdown,'.haml' => :haml, '.sass' => :sass}
   %li Automatically displays the newest posts on the front page
   %li Tagging / generation of tag pages
   %li Generates archive pages

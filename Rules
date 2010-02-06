@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
 preprocess do
-
-  # quick way to unpublish an item
+  # items may be unpublished by adding attribute publish: false
   items.delete_if { |item| item[:publish] == false }
 
   copy_static
@@ -22,7 +21,7 @@ compile '*' do
   elsif ext == '.haml' || ext.nil?
     filter :haml, :ugly => true
   elsif ext == '.md' || ext == '.markdown'
-    filter :bluecloth
+    filter :kramdown
   else
     raise "Filter is not configured for #{item.identifier} in Rules file."
   end
