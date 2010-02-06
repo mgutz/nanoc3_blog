@@ -6,12 +6,9 @@ title: Archives
 
 .archives
   - articles_by_year_month.each do |year, month_h|
-    .year
-      %h2= year
-      - month_h.each do |month, item_a|
-        .month
-          %h2= to_month_s(month)
-          %ul
-            - item_a.each do |item|
-              %li
-                %a(href="#{route_path(item)}")= item[:title]
+    - month_h.each do |month, item_a|
+      %h2= "#{year} #{to_month_s(month)}"
+      %ul
+        - item_a.each do |item|
+          %li
+            = render('_excerpt', :item => item) 

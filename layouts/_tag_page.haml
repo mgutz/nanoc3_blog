@@ -2,8 +2,7 @@
 ---
 %h1
   = "#{tag.capitalize} Articles"
-  
-- items_with_tag(tag).each do |item|
-  .tag
-    %a(href='#{route_path(item)}')
-      = item[:title]
+
+.tag-page
+  - items_with_tag(tag).each do |item|
+    = render('_excerpt', :item => item) 

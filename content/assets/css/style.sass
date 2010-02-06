@@ -9,7 +9,7 @@
   font-family: 'Palatino Linotype', Palatino, Georgia, serif
   
 = monospace
-  font-family: Menlo, Consolas, Courier New, monospace
+  font-family: Menlo, Consolas, "Courier New", Courier, monospace
 
 = ul_left 
   ul
@@ -74,14 +74,14 @@ a
     text-decoration: underline
 
 code, pre
-  color = !normal_color
-  font-size: .9em
   +monospace
+  color = !normal_color
+  font-size: 14px 
 
 h1, h2, h3, h4
   +sans
   color = !attention_color
-  margin-bottom: .7em
+  margin-bottom: 1.5em
   font-weight: normal
   a
     +sans
@@ -190,8 +190,6 @@ div, li, p
 
 .article, .excerpt, .featured
   margin-bottom: 2.5em
-  h2
-    margin-top: 1.5em
 
   
 #sticky
@@ -204,20 +202,15 @@ div, li, p
       margin: 0
       line-height: 4em
 
-.archives
-  .year
-    margin-bottom: 2em
-    h2
-      color = !base1
-      +serif
-      font-size: 2em
-      margin-bottom: .5em
-  .month
-    h2
-      color = !base2
-      +serif
-      font-size: 1.6em
-  +ul_left 
+.archives, .tag-page
+  .excerpt
+    font-size: 90%
+    margin-bottom: 0px
+  ul
+    list-style-type: none
+    padding-left: 0px
+  h2
+    margin-bottom: 1em
 
 .tags
   text-transform: lowercase
