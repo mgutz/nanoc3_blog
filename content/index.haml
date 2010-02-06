@@ -28,7 +28,7 @@ title: nanoc3 blog starter kit
 .clear
 
 -# for SEO, but make it disappear
-#taglist.passive
+#taglist
   - tags = count_tags()
   - tags.each.sort_by {|k,v| k}.each do |tag_count|
     - tag = tag_count[0]

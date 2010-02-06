@@ -13,7 +13,7 @@ data_sources:
 deploy:
   default:
     dst: "mgutz_com:www/nanoc3_blog"
-    options: ['-ave ssh'] 
+    options: ['-ave ssh', '--exclude=.DS_Store', '--exclude=*~'] 
 
 # domain to which this site is deployed
 base_url: http://nanoc3-blog.mgutz.com

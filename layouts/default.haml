@@ -38,7 +38,8 @@
         = render('_article', :item => @item, :content => content)
         = render('_other_articles_nav', :reference_item => @item)
         .clear
-        = render('_disqus', :item => @item)
+        - if !is_front_page?
+          = render('_disqus', :item => @item)
       - else
         = content
       .clear
