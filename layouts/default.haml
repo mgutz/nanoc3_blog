@@ -6,7 +6,10 @@
     %title 
       = "#{@config[:site_title]} - #{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
-    %meta(name="keywords" content="#{tag_set.join(', ')}") 
+    - if is_front_page?
+      %meta(name="keywords" content="#{tag_set.join(', ')}") 
+    - else
+      %meta(name="keywords" content="#{@item[:tags].nil? ? '' : @item[:tags].join(', ')}") 
     %link(href="/assets/css/reset.css" rel="stylesheet" type="text/css")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
 
