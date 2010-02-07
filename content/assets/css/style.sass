@@ -7,14 +7,15 @@
 !normal_color = !base_color
 !passive_color =  #999
 
+// ruby per wikipedia
+!logo_color = #E0115F
+
 !link_color = #000
-!link_hover_color = !link_color
+!link_hover_color = !logo_color
 !link_bg = #fff
 
 !tag_color = !link_color
 
-// ruby per wikipedia
-!logo_color = #E0115F
 
 
 //// Mixins
@@ -81,6 +82,8 @@ h1, h2, h3, h4, h5
     color = !heading_color !important
     text-decoration: none
     border-bottom: none
+    &:hover
+      color = !link_hover_color !important
 
 h1
   border-bottom: 1px solid #eee
@@ -223,9 +226,11 @@ pre
 .passive
   color = !passive_color
 
-.tag
+a.tag
   color = !tag_color !important
   padding: 0 .1em 0
+  &:hover
+    color = !link_hover_color !important
 
 .tags
   text-transform: lowercase
