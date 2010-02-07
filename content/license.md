@@ -1,5 +1,6 @@
 ---
 title: FreeBSD License
+is_hidden: true
 ---
 
 # FreeBSD License
