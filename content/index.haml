@@ -17,7 +17,7 @@ title: nanoc3 blog starter kit
   - oldest_item = item
   - current_index += 1
   .featured
-    = render('_article', :item => item)
+    = render('_article', :item => item, :is_embedded => true)
 
 - sorted_articles[current_index, excerpt_count].each do |item|
   - oldest_item = item

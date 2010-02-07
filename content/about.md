@@ -3,14 +3,18 @@ title: About Mario Gutierrez
 ---
 
 # About Mario Gutierrez
-  
-I started programming on your mom's VCR.
+
+Is a born-again developer using Ruby, Scala and open source technologies.
+He is also learning Objective-C for iPhone/iPad applications.
+
+Before this he was an enterprise developer adept in C#, Java, Javascript, Delphi, Visual Basic, SQL Server, ASP, ASP.NET Webforms and ASP.NET MVC.
+
+Visit [Mario's site](http://mgutz.com)
 
 ## About This Site
 
-nanoc3_blog is a [nanoc3](http://nanoc.stoneship.org) blog starter kit for hackers.
-The blog compiles to pure HTML with no run-time
-processing. Ultra-fast and light. No database. No headaches. Host anywhere.
+nanoc3_blog is a [nanoc3](http://nanoc.stoneship.org) blog starter kit for Ruby hackers.
+The blog compiles into pure HTML. No javascript (keeping it simple). Ultra-fast and light. No database. No headaches. Host anywhere.
 
 Source is available from my [nanoc3_blog](http://github.com/mgutz/nanoc3_blog) github repository.
 Source is provided under the [FreeBSD License](/license.html).

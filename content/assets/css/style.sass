@@ -1,6 +1,24 @@
 ---
 ---
 
+//// Variables
+!base_color = #303030
+!heading_color = #202020
+!normal_color = !base_color
+!passive_color =  #999
+
+!link_color = #000
+!link_hover_color = !link_color
+!link_bg = #fff
+
+!tag_color = !link_color
+
+// ruby per wikipedia
+!logo_color = #E0115F
+
+
+//// Mixins
+
 = sans
   font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
   
@@ -16,24 +34,8 @@
     padding: 0
     list-style-type: none
 
-// Change base color
-!base_color = #333
-!heading_color = #111
-!subdued_color = #555
-!normal_color = !base_color
-!passive_color =  #555
 
-// Change alternate color
-!alternate_color = #00f
-//!alternate_color = #5da6cf
-   
-//
-!link_base = #800
-!link_color = !link_base
-!link_hover_color = !link_base
-
-!tag_color = !link_color
-!logo_color = !base_color
+//// Styles
   
 *
   +serif
@@ -50,8 +52,9 @@ body
   padding: 3em 0
   
 a
+  background-color = !link_bg
   color = !link_color
-  text-decoration: none 
+  text-decoration: underline
   margin: 2px
 
   &:link, &:visited
@@ -69,27 +72,26 @@ code, pre
 div, li, p
   line-height: 1.36em
        
-h1, h2, h3, h4
+h1, h2, h3, h4, h5
   +sans
   color = !heading_color
   font-weight: normal
   a
     +sans
     color = !heading_color !important
+    text-decoration: none
+    border-bottom: none
 
 h1
   border-bottom: 1px solid #eee
+  font-size: 1.5em
+  padding-bottom: 6px
   margin-bottom: 1.5em
 
 h2, h3, h4
   color = !heading_color
-  margin: 1em 0
+  margin: 1.6em 0 1.4em
 
-h1
-  font-size: 1.6em
-  padding-bottom: 6px
-  margin-bottom: .7em
-  
 h2
   font-size: 1.3em
 
@@ -106,7 +108,7 @@ ol, ul
     padding-bottom: .3em
   
 ol, ul, p, pre
-  margin-bottom: 1.44em
+  margin-bottom: 1.4em
 
 pre
   background-color: #f8f8f8
@@ -118,13 +120,26 @@ pre
   margin-bottom: 2em
   overflow: auto
   .logo
-    font-family: Helvetica, Arial, serif
+    -webkit-border-radius: 12px 0 0
+    -moz-border-radius: 12px 0 0
+    background-color= !logo_color
+    color: #fff
     float: left
-    font-size: 2.4em
-    color = !logo_color
+    font-family: Helvetica, Arial, serif
+    font-size: 2.6em
+    font-weight: bold
+    padding: 0 .3em
+    // css3 inset effect
+    //text-shadow: 0px -1px 1px #aaa
     a
       +sans
-      color = !logo_color
+      color: #fff
+      background-color= !logo_color
+      text-decoration: none
+      &:link, &:visited
+        color = #fff !important
+      &:hover
+        text-decoration: underline
     
   #nav
     float: right
@@ -185,7 +200,7 @@ pre
   h3
     margin-bottom: .5em 
   p
-    color = !subdued_color
+    //color = !subdued_color
     margin-bottom: .5em
 
 .logo
