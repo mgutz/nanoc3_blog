@@ -42,24 +42,15 @@
   +serif
   color = !normal_color
 
-html
-  //border-top: 20px solid #999
-  //background-color = !normal_color
-  //padding-top: 20px
-
 body
-  //background-color: #fff
   font-size: 100%
-  border-top: 2px solid #ccc
+  border-top: 2px solid #ccc 
   min-width: 800px
-  //margin: auto
-  //width: 720px
 
 #main
   margin: auto
   width: 720px
   padding: 3em 0
-  
   
 a
   color = !link_color
@@ -78,28 +69,24 @@ code, pre
   color = !normal_color
   font-size: 14px 
 
+div, li, p
+  line-height: 1.36em
+       
 h1, h2, h3, h4
   +sans
   color = !attention_color
-  margin-bottom: 1.5em
   font-weight: normal
   a
     +sans
     color = !attention_color !important
 
-.logo
-  +sans
-  color = !logo_color
-  margin-bottom: .7em
-  a
-    +sans
-    color = !logo_color !important
-
 h1
   border-bottom: 1px solid #eee
+  margin-bottom: 1.5em
 
 h2, h3, h4
   color = !base2
+  margin: 1em 0
 
 h1
   font-size: 1.6em
@@ -115,11 +102,6 @@ h3
 h4
   font-size: 1.1em
   
-pre
-  background-color: #f8f8f8
-  border-left = 3px "double" !passive_color
-  padding: .5em 
-
 ol, ul
   list-style-type: disc 
   padding-left: 30px
@@ -128,10 +110,12 @@ ol, ul
   
 ol, ul, p, pre
   margin-bottom: 1.44em
-  
-div, li, p
-  line-height: 1.36em
-       
+
+pre
+  background-color: #f8f8f8
+  border-left = 3px "double" !passive_color
+  padding: .5em 
+
 
 #header
   margin-bottom: 2em
@@ -159,39 +143,20 @@ div, li, p
   margin-top: 0.5em
   +ul_left
   h3
-    margin-bottom: .2em
+    margin: 0 0 .2em
 
-.older
-  float: left
-  
-.newer
-  text-align: right
-  float: right
-  
-.passive
-  color = !passive_color
+  .newer
+    text-align: right
+    float: right
 
-.meta
-  font-size: 0.8em 
-  ul
-    margin: 0px
-    padding-left: 0
-    li
-      color = !passive_color
-      display: inline
-
+  .older
+    float: left
+    
 #taglist
   font-size: .8em
   margin-top: 3em
   text-align: right
 
-.clear
-  clear: both
-
-.article, .excerpt, .featured
-  margin-bottom: 2.5em
-
-  
 #sticky
   border: 3px double #eee
   margin-bottom: 3.2em  
@@ -205,23 +170,19 @@ div, li, p
 .archives, .tag-page
   .excerpt
     font-size: 90%
-    margin-bottom: 0px
+    margin: 0
+    h3
+      margin-top: 0
   ul
     list-style-type: none
     padding-left: 0px
-  h2
-    margin-bottom: 1em
 
-.tags
-  text-transform: lowercase
-    
-.tag
-  color = !tag_color !important
-  padding: 0 .1em 0
-      
-.tags-page
-  +ul_left
-    
+.article, .excerpt, .featured
+  margin-bottom: 2.5em
+
+.clear
+  clear: both
+
 .excerpt
   margin-bottom: 1.5em 
   h3
@@ -229,3 +190,33 @@ div, li, p
   p
     color = !base4 
     margin-bottom: .5em
+
+.logo
+  +sans
+  color = !logo_color
+  margin-bottom: .7em
+  a
+    +sans
+    color = !logo_color !important
+
+.meta
+  font-size: 0.8em 
+  ul
+    margin: 0px
+    padding-left: 0
+    li
+      color = !passive_color
+      display: inline
+
+.passive
+  color = !passive_color
+
+.tag
+  color = !tag_color !important
+  padding: 0 .1em 0
+
+.tags
+  text-transform: lowercase
+    
+.tags-page
+  +ul_left
