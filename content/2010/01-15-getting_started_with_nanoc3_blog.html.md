@@ -51,7 +51,7 @@ Copy any of the files in `content/2010` and edit.  Use a date later than `01-18`
 Edit these two files:
 
     content/about.haml
-    content/sticky.haml # Your whitespace are belong to us box.
+    content/sticky.haml # box content on front page
 
 To change the front page: `content/index.haml`
 

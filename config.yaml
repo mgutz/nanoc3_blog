@@ -33,5 +33,5 @@ excerpt_count: 6
 # number of other articles to reference at bottom of each article
 other_articles_max: 3
 
-# DISQUS Site Shortname (enables commenting)
-#disqus_shortname: nanoc3-blog
+# DISQUS Site Shortname. Comment out to disable.
+disqus_shortname: nanoc3-blog

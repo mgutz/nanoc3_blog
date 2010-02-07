@@ -4,7 +4,7 @@ title: About Mario Gutierrez
 
 # About Mario Gutierrez
 
-Is a born-again developer using Ruby, Scala and open source technologies.
+Mario, mgutz, is a born-again developer using Ruby, Scala and other open source technologies.
 He is also learning Objective-C for iPhone/iPad applications.
 
 Before this he was an enterprise developer adept in C#, Java, Javascript, Delphi, Visual Basic, SQL Server, ASP, ASP.NET Webforms and ASP.NET MVC.
