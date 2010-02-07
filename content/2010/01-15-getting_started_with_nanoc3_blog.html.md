@@ -44,7 +44,11 @@ Preview the site (refresh page to see changes)
 
 ## Adding Content
 
-Copy any of the files in `content/2010` and edit.  Use a date later than `01-18` and it will appear as the first post in your blog.
+Edit the file created by running this command:
+
+    # filename is written to console
+    % rake create:article title='Hello world'
+
 
 ## Customizing Existing Content
 
