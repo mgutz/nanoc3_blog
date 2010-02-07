@@ -28,18 +28,16 @@ Edit the configuration files:
 
 Compile the site
 
-    # clean output directories
+    # cleans output/ directory. `rm -rf output` works just as well
     % rake clean 
 
-    # compile the site
+    # compiles content/* and copies static/* to output/
     % nanoc3 compile
 
-    # autocompile the site. 
+    # runs preview server and autocompile on page refresh
     % nanoc3 aco
 
-Preview the site (refresh page to see changes)
-
-    http://localhost:3000
+Preview the site on `http://localhost:3000`
 
 
 ## Adding Content
@@ -54,8 +52,8 @@ Edit the file created by running this command:
 
 Edit these two files:
 
-    content/about.haml
-    content/sticky.haml # box content on front page
+    content/about.md
+    content/sticky.md # box content on front page
 
 To change the front page: `content/index.haml`
 
