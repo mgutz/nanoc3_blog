@@ -6,7 +6,7 @@ created_at: 2010/01/15
 excerpt: How to create a blog using nanoc3_blog starter kit
 ---
 
-## Pre-requisites
+## Prerequisites
 
 Know how to use command-line shell, `Ruby, HAML, SASS and Markdown`.
 

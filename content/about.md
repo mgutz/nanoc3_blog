@@ -13,6 +13,7 @@ The blog compiles to pure HTML with no run-time
 processing. Ultra-fast and light. No database. No headaches. Host anywhere.
 
 Source is available from my [nanoc3_blog](http://github.com/mgutz/nanoc3_blog) github repository.
+Source is provided under the [FreeBSD License](/license.html).
 
 Features: 
 
