@@ -17,14 +17,11 @@
     list-style-type: none
 
 // Change base color
-!base_color = #222
-!base1 = lighten(!base_color, 5%)
-!base2 = lighten(!base_color, 10%)
-!base3 = lighten(!base_color, 15%)
-!base4 = lighten(!base_color, 20%)
+!base_color = #333
+!heading_color = #111
+!subdued_color = #555
 !normal_color = !base_color
-!passive_color = lighten(!base_color, 40%)
-!attention_color = !base2
+!passive_color =  #555
 
 // Change alternate color
 !alternate_color = #00f
@@ -74,18 +71,18 @@ div, li, p
        
 h1, h2, h3, h4
   +sans
-  color = !attention_color
+  color = !heading_color
   font-weight: normal
   a
     +sans
-    color = !attention_color !important
+    color = !heading_color !important
 
 h1
   border-bottom: 1px solid #eee
   margin-bottom: 1.5em
 
 h2, h3, h4
-  color = !base2
+  color = !heading_color
   margin: 1em 0
 
 h1
@@ -188,7 +185,7 @@ pre
   h3
     margin-bottom: .5em 
   p
-    color = !base4 
+    color = !subdued_color
     margin-bottom: .5em
 
 .logo

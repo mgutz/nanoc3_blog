@@ -11,7 +11,7 @@ Features:
 3. Rolls/archives articles to front page.
 4. Generates tag pages.
 5. Minimalist styling.
-6. Uses SASS color manipulation functions. (unfortunately these functions have not yet made it into a release, must use HAML github repo)
+6. Uses SASS
 7. DISQUS integration.
 
 
@@ -19,8 +19,6 @@ Features:
 ## Installation
 
 Ruby >= 1.8.7 is required to properly compile the site. One of the dependent gems is not Ruby 1.8.6 friendly. I recommend using [rvm](http://rvm.beginrescueend.com/) to easily switch ruby binaries to either Ruby 1.8.7 or Ruby 1.9.1 before compiling the site.
-
-SASS Color manipulation functions are used within the stylesheet which requires the haml version from github.
 
     % gem install rack rake mime-types nanoc3 haml bluecloth
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
