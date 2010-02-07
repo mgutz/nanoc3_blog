@@ -20,21 +20,21 @@ def route_path(item)
   return item.identifier + "index.html" if item[:file].nil?
   
   url = item[:file].path.gsub(/^content/, '')
-  
-  # if 2 extensions, use first extension as the output file
-  if url.match(/(\.[a-zA-Z0-9]+){2}$/)
-    url.gsub!(item[:extension], '')
+ 
+  # determine output extension
+  extname = item[:extension]
+  outext = '.haml'
+  if url.match(/(\.[a-zA-Z0-9]+){2}$/) # => *.html.erb, *.html.md ...
+    outext = '' # remove 2nd extension
+  elsif extname == ".sass"
+    outext = '.css'
   else
-    url.gsub!(item[:extension], '.html')
+    outext = '.html'
   end
+  url.gsub!(item[:extension], outext)
   
   if url.include?('-')
-    url = url.split('-').join('/')                # /2010/01/01-some_title.html -> /2010/01/01/some_title.html
-  end
-
-  # used in Rules to bypass layout
-  if File.extname(url) != ".html"
-    item[:layout] = "none"
+    url = url.split('-').join('/')  # /2010/01/01-some_title.html -> /2010/01/01/some_title.html
   end
 
   url
@@ -44,9 +44,9 @@ end
 def create_tag_pages
   tag_set(items).each do |tag|
     items << Nanoc3::Item.new(
-      "= render('_tag_page', :tag => '#{tag}')", # use locals to pass data
-      { :title => "Category: #{tag}"},      # attributes
-      "/tags/#{tag}/"                        # identifier
+      "= render('_tag_page', :tag => '#{tag}')",          # use locals to pass data
+      { :title => "Category: #{tag}", :is_hidden => true}, # do not include in sitemap.xml
+      "/tags/#{tag}/"                                     # identifier
     )
   end
 end
@@ -56,9 +56,15 @@ end
 def add_missing_info
   items.each do |item|
     if item[:file]
+
       # nanoc3 >= 3.1 will have this feature, add for older versions
       item[:extension] ||= File.extname(item[:file].path)
+
+      # do not include assets or xml files in sitemap
+      ext = File.extname(route_path(item))
+      item[:is_hidden] = true if item[:file].path =~ /assets\// || ext == '.xml'
     end
+
     next if item[:kind] != "article"
     item[:created_at] ||= derive_created_at(item)
     # sometimes nanoc3 stores created_at as Date instead of String causing a bunch of issues
