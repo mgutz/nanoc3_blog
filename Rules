@@ -19,7 +19,7 @@ compile '*' do
   if ext == '.erb'
     filter :erb
   elsif ext == '.haml' || ext.nil?
-    filter :haml, :ugly => true
+    filter :haml
   elsif ext == '.md' || ext == '.markdown'
     filter :kramdown
   else
@@ -40,4 +40,4 @@ route '*' do
   route_path(item)
 end
 
-layout '*', :haml, :ugly => true
+layout '*', :haml
