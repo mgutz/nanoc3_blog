@@ -16,13 +16,8 @@ From the command line
 
     % gem install rack rake mime-types nanoc3 haml kramdown
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
+    % cd your_blog
 
-## Configuration
-
-Edit the configuration files:
-
-    config.yaml
-    content/atom.xml.erb
 
 ## Previewing the Site
 
@@ -40,14 +35,6 @@ Compile the site
 Preview the site on `http://localhost:3000`
 
 
-## Adding Content
-
-Edit the file created by running this command:
-
-    # filename is written to console
-    % rake create:article title='Hello world'
-
-
 ## Customizing Existing Content
 
 Edit these two files:
@@ -55,8 +42,33 @@ Edit these two files:
     content/about.md
     content/sticky.md # box content on front page
 
+Delete articles to remove them from site and recompile. Restart preview server if you do.
+
 To change the front page: `content/index.haml`
 
 To change the site layout: `layouts/default.haml`
 
 To style the site:  `content/assets/style.sass`
+
+
+## Adding Content
+
+Edit the Markdown file created by running this command:
+
+    # filename is written to console
+    % rake create:article title='Hello world'
+
+
+## Configuration
+
+Edit the configuration files:
+
+    config.yaml
+    content/atom.xml.erb
+
+## Deployment
+
+Transfer `output/*` to your hosted web server. If you are using rsync, then
+edit the settings in `config.yaml` and execute
+
+    % rsync deploy:rsync
