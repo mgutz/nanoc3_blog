@@ -22,7 +22,7 @@ title: Mario Gutierrez, Open Source Technologist
   - oldest_item = item
   = render('_excerpt', :item => item) 
                 
-/= render('_other_articles_nav', :reference_item => oldest_item, :older_only => true)
+-#= render('_other_articles_nav', :reference_item => oldest_item, :older_only => true)
 
 .clear
 
@@ -32,15 +32,3 @@ title: Mario Gutierrez, Open Source Technologist
   - tags.each.sort_by {|k,v| k}.each do |tag_count|
     - tag = tag_count[0]
     %a(href="/tags/#{tag}/" class='tag')= tag
-
-:javascript
-  (function() {
-    var links = document.getElementsByTagName('a');
-    var query = '?';
-    for(var i = 0; i < links.length; i++) {
-      if(links[i].href.indexOf('#disqus_thread') >= 0) {
-        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-      }
-    }
-    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/#{disqus_shortname}/get_num_replies.js' + query + '"></' + 'script>');
-  })();
