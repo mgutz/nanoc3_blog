@@ -8,7 +8,8 @@
       %a(href="#{route_path(item)}" title="Full article" class="permalink")= item[:title]
     - else
       = item[:title]
+  
+  = render('_meta', :item => item)
 
   .body
     != content || partial(item)
-  = render('_meta', :item => item)
