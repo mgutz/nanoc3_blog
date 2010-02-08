@@ -20,7 +20,7 @@
         .logo
           - if is_front_page?
             = site_name
-          -else
+          - else
             %a(href='/')= "&laquo; #{site_name}"
         #nav
           %ul

@@ -3,15 +3,15 @@ is_hidden: true
 ---
 
 //// Variables
-!base_color = #303030
-!heading_color = #202020
+!base_color = #333
+!heading_color = !base_color
 !normal_color = !base_color
-!passive_color =  #999
+!passive_color =  #666
 
 // ruby per wikipedia
 !logo_color = #E0115F
 
-!link_color = #000
+!link_color = #444
 !link_hover_color = !logo_color
 !link_bg = #fff
 
@@ -22,14 +22,17 @@ is_hidden: true
 //// Mixins
 
 = sans
-  font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif
   
 = serif
   //font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
-  font-family: 'Palatino Linotype', Palatino, Georgia, serif
-  
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif 
+
+= logo-font
+  font-family: baskerville, palatino, 'palatino linotype', georgia,serif
+ 
 = monospace
-  font-family: Menlo, Consolas, "Courier New", Courier, monospace
+  font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
 
 = ul_left 
   ul
@@ -44,7 +47,7 @@ is_hidden: true
   color = !normal_color
 
 body
-  font-size: 105%
+  font-size: 16px 
   border-top: 2px solid #ccc 
   min-width: 800px
 
@@ -55,8 +58,9 @@ body
   
 a
   background-color = !link_bg
+  border-bottom = dotted 1px #666
   color = !link_color
-  text-decoration: underline
+  text-decoration: none
   margin: 2px
 
   &:link, &:visited
@@ -64,16 +68,17 @@ a
   
   &:hover
     color = !link_hover_color
-    text-decoration: underline
+    text-decoration: none
 
 code, pre
   +monospace
   color = !normal_color
-  font-size: 15px 
+  font-size: 13px 
 
-div, li, p
-  line-height: 1.36em
-       
+blockquote, div, ol, p, pre, ul
+  line-height: 1.5em
+  margin-bottom: 1.5em
+
 h1, h2, h3, h4, h5
   +sans
   color = !heading_color
@@ -88,32 +93,26 @@ h1, h2, h3, h4, h5
 
 h1
   border-bottom: 1px solid #eee
-  font-size: 1.5em
+  font-size: 1.8em
   padding-bottom: 6px
-  margin-bottom: 1.5em
+  margin-bottom: 1em
 
-h2, h3, h4
+h2, h3
   color = !heading_color
-  margin: 1.6em 0 1.4em
+  margin: 1.5em 0 1em
 
 h2
   font-size: 1.3em
 
 h3
-  font-size: 1.2em
-
-h4
   font-size: 1.1em
-  
+
 ol, ul
   list-style-type: disc 
   padding-left: 30px
   li
-    padding-bottom: .3em
+    line-height: 1.5em
   
-ol, ul, p, pre
-  margin-bottom: 1.4em
-
 pre
   background-color: #f8f8f8
   border-left = 3px "double" !passive_color
@@ -129,9 +128,8 @@ pre
     background-color= !logo_color
     color: #fff
     float: left
-    font-family: Helvetica, Arial, serif
-    font-size: 2.6em
-    font-weight: bold
+    font-size: 30px
+    +logo-font
     padding: 0 .3em
     // css3 inset effect
     //text-shadow: 0px -1px 1px #aaa
@@ -139,11 +137,14 @@ pre
       +sans
       color: #fff
       background-color= !logo_color
+      border: none
+      +logo-font
       text-decoration: none
       &:link, &:visited
-        color = #fff !important
+        color: #fff !important
       &:hover
-        text-decoration: underline
+        color: #000 !important
+        text-decoration: none
     
   #nav
     float: right
@@ -159,7 +160,7 @@ pre
   margin-top: 0.5em
   +ul_left
   h3
-    margin: 0 0 .2em
+    margin: 0 0 .5em
 
   .newer
     text-align: right
@@ -187,7 +188,7 @@ pre
   .excerpt
     font-size: 90%
     margin: 0
-    h3
+    h2
       margin-top: 0
   ul
     list-style-type: none
@@ -201,10 +202,9 @@ pre
 
 .excerpt
   margin-bottom: 1.5em 
-  h3
+  h2
     margin-bottom: .5em 
   p
-    //color = !subdued_color
     margin-bottom: .5em
 
 .logo
@@ -216,7 +216,7 @@ pre
     color = !logo_color !important
 
 .meta
-  font-size: 0.8em 
+  font-size: 13px
   ul
     margin: 0px
     padding-left: 0
