@@ -8,7 +8,7 @@ excerpt: How to create a blog using nanoc3_blog starter kit
 
 ## Prerequisites
 
-Know how to use command-line shell, `Ruby, HAML, SASS and Markdown`.
+Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 
 ## Installation
 
@@ -48,7 +48,7 @@ To change the front page: `content/index.haml`
 
 To change the site layout: `layouts/default.haml`
 
-To style the site:  `content/assets/style.sass`
+To style the site: `content/assets/style.sass`
 
 
 ## Adding Content
@@ -70,7 +70,8 @@ Edit the configuration files:
 
 ## Deployment
 
-Transfer `output/*` to your hosted web server. If you are using rsync, then
+Transfer `output/*` to your hosted web server. If use rsync, then
 edit the settings in `config.yaml` and execute
+
 
     % rake deploy:rsync

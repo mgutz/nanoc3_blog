@@ -14,7 +14,7 @@
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
 
   %body
-    - content = yield
+    - content = find_and_preserve(yield)
     #main
       #header 
         .logo
