@@ -1,0 +1,18 @@
+---
+is_hidden: true
+---
+-# tracks all subdomains of a domain
+- domain = @config[:google_analytics][:domain]
+- site_id = @config[:google_analytics][:site_id]
+- if site_id
+  :javascript
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  :javascript
+    try {
+      var pageTracker = _gat._getTracker("#{site_id}");
+      pageTracker._setDomainName(".#{domain}");
+      pageTracker._setAllowHash(false);
+      pageTracker._trackPageview();
+    } catch(err) {}
+
