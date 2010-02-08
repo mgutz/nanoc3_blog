@@ -58,6 +58,8 @@ Edit the Markdown file created by running this command:
     # filename is written to console
     % rake create:article title='Hello world'
 
+After compiling or refresh in preview mode, view your page from the front page, archives link and tags link 
+if you entered tags.
 
 ## Configuration
 
@@ -71,4 +73,4 @@ Edit the configuration files:
 Transfer `output/*` to your hosted web server. If you are using rsync, then
 edit the settings in `config.yaml` and execute
 
-    % rsync deploy:rsync
+    % rake deploy:rsync
