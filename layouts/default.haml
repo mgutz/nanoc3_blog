@@ -4,7 +4,7 @@
 %html
   %head
     %title 
-      = "#{@config[:site_title]} - #{@item[:title]}"
+      = "#{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     - if is_front_page?
       %meta(name="keywords" content="#{tag_set.join(', ')}") 

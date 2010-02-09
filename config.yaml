@@ -26,9 +26,6 @@ google_analytics:
 # currently used by logo
 site_name: nanoc3_blog
 
-# title prefix for all pages, displays in title bar in most browsers
-site_title: nanoc3-blog.mgutz.com
-
 # number of full featured posts to display on front
 featured_count: 0
 

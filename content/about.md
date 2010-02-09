@@ -1,5 +1,5 @@
 ---
-title: About Mario Gutierrez
+title: About nanoc3_blog
 ---
 
 # About This Site
