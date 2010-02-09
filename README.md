@@ -6,7 +6,7 @@ View this project on [nanoc3-blog.mgutz.com](http://nanoc3-blog.mgutz.com/).
 
 Features:
 
-1. Uses the appropriate filter based on the file extension: .erb -> ERB, .haml -> HAML, .md, .markdown -> BlueCloth, .sass -> SASS
+1. Uses the appropriate filter based on the file extension: .erb -> ERB, .haml -> HAML, .md, .markdown -> kramdown, .sass -> SASS
 2. Uses the filesystem_combined datasource, so a separate .yaml metadata file is not needed for each item.
 3. Rolls/archives articles to front page.
 4. Generates tag pages.
@@ -20,7 +20,7 @@ Features:
 
 Ruby >= 1.8.7 is required to properly compile the site. One of the dependent gems is not Ruby 1.8.6 friendly. I recommend using [rvm](http://rvm.beginrescueend.com/) to easily switch ruby binaries to either Ruby 1.8.7 or Ruby 1.9.1 before compiling the site.
 
-    % gem install rack rake mime-types nanoc3 haml bluecloth
+    % gem install rack rake mime-types nanoc3 haml kramdown 
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
 
 ## Configuration
