@@ -26,9 +26,6 @@ google_analytics:
 # currently used by logo
 site_name: mgutz
 
-# title prefix for all pages, displays in title bar in most browsers
-site_title: mgutz.com
-
 # number of full featured posts to display on front
 featured_count: 0
 
