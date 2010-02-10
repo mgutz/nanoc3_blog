@@ -18,7 +18,6 @@ deploy:
 # domain to which this site is deployed
 base_url: http://mgutz.com
 
-
 google_analytics:
   domain: mgutz.com
   site_id: UA-9655468-1
