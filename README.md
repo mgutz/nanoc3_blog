@@ -20,7 +20,11 @@ Features:
 
 Ruby >= 1.8.7 is required to properly compile the site. One of the dependent gems is not Ruby 1.8.6 friendly. I recommend using [rvm](http://rvm.beginrescueend.com/) to easily switch ruby binaries to either Ruby 1.8.7 or Ruby 1.9.1 before compiling the site.
 
+<<<<<<< HEAD:README.md
     % gem install rack rake mime-types nanoc3 haml kramdown 
+=======
+    % gem install rack rake mime-types nanoc3 haml kramdown builder
+>>>>>>> master:README.md
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
 
 ## Configuration
