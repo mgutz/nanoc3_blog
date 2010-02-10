@@ -29,7 +29,7 @@ Interested? See [Getting Started With nanoc3_blog](/2010/01/15/getting_started_w
 
 ## About The Author
 
-My name is Mario Gutierrez aka `mgutz`. I like minimalist-styled blogs.
+My name is Mario Gutierrez aka `mgutz`. I like minimal-styled blogs.
 
 Visit [my blog](http://mgutz.com)
 

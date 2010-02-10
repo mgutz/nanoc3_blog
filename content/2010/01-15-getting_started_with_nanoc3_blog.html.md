@@ -3,7 +3,7 @@ title: Getting Started With nanoc3_blog
 kind: article
 tags: [haml, kramdown, nanoc3, sass]
 created_at: 2010/01/15
-excerpt: How to create a blog using nanoc3_blog starter kit
+excerpt: Get started with nanoc3_blog
 ---
 
 ## Prerequisites
@@ -14,7 +14,7 @@ Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 
 From the command line
 
-    % gem install rack rake mime-types nanoc3 haml kramdown
+    % gem install rack rake mime-types nanoc3 haml kramdown builder
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
     % cd your_blog
 
