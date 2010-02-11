@@ -4,6 +4,7 @@ kind: article
 tags: [haml, kramdown, nanoc3, sass]
 created_at: 2010/01/15
 excerpt: Get started with nanoc3_blog
+_:
 ---
 
 ## Prerequisites
