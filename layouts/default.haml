@@ -1,39 +1,48 @@
 ---
 ---
+:ruby
+  # may be set by partials
+  @config[:include_disqus_js] = false
+
+  def keywords
+    if is_front_page?
+      tag_set.join(', ') 
+    else
+      @item[:tags].nil? ? '' : @item[:tags].join(', ') 
+    end
+  end
+  def link_unless_current(s)
+    "<li><a href='/#{s}.html'>#{s}</a></li>" if @item.identifier != "/#{s}/" 
+  end
+  def logo
+    if is_front_page?
+      site_name
+    else
+      "<a href='/'>&laquo; #{site_name}</a>"
+    end
+  end
+
 !!! Strict
 %html
   %head
-    %title 
-      = "#{@item[:title]}"
+    %title= "#{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
-    - if is_front_page?
-      %meta(name="keywords" content="#{tag_set.join(', ')}") 
-    - else
-      %meta(name="keywords" content="#{@item[:tags].nil? ? '' : @item[:tags].join(', ')}") 
+    %meta(name="keywords" content="#{keywords}") 
     %link(href="/assets/css/reset.css" rel="stylesheet" type="text/css")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
 
   %body
-    - @config[:include_disqus_js] = false
+    -# needed since some content render <pre> blocks
     - content = find_and_preserve(yield)
     #main
       #header 
         .logo
-          - if is_front_page?
-            = site_name
-          - else
-            %a(href='/')= "&laquo; #{site_name}"
+          = logo
         #nav
           %ul
-            - if @item.identifier != '/about/'
-              %li
-                %a(href='/about.html') about
-            - if @item.identifier != '/archives/'
-              %li
-                %a(href='/archives.html') archives
-            - if @item.identifier != '/tags/'
-              %li
-                %a(href='/tags.html') tags
+            != link_unless_current "about"
+            != link_unless_current "archives"
+            != link_unless_current "tags"
             %li
               %a(href='/atom.xml') rss
       .clear
@@ -62,5 +71,4 @@
           document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/#{disqus_shortname}/get_num_replies.js' + query + '"></' + 'script>');
         })();
  
-    -# google analytics
     = render('_ganalytics')
