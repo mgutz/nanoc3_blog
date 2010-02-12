@@ -1,5 +1,6 @@
 require 'nanoc3/tasks'
 require 'fileutils'
+require 'stringex'
 
 namespace :create do
   @now = Time.now
@@ -39,9 +40,7 @@ TEMPLATE
 
   def calc_path(title)
     path = "content/" + @now.strftime("%Y/") 
-    filename = @now.strftime("%m-%d-") + title.downcase.gsub(/[ \t]+/, '_') + ".md"
-    # remove special characters
-    filename.gsub!(/[:\/\\!\"\']/, '')
+    filename = @now.strftime("%m-%d-") + title.to_url.gsub(/-/, '_') + ".md"
 
     [path, filename, path + filename]
   end
