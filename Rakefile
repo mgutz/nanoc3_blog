@@ -1,7 +1,6 @@
 require 'nanoc3/tasks'
 require 'fileutils'
 
-
 namespace :create do
   @now = Time.now
 
@@ -37,7 +36,6 @@ TEMPLATE
     File.open(full_path, 'w') { |f| f.write(template) }
     $stdout.puts "\t[ok] Edit #{full_path}"
   end
-
 
   def calc_path(title)
     path = "content/" + @now.strftime("%Y/") 

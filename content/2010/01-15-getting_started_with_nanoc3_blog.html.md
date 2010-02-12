@@ -62,6 +62,7 @@ Edit the Markdown file created by running this command:
 After compiling or refresh in preview mode, view your page from the front page, archives link and tags link 
 if you entered tags.
 
+
 ## Configuration
 
 Edit the configuration files:
@@ -73,6 +74,5 @@ Edit the configuration files:
 
 Transfer `output/*` to your hosted web server. If use rsync, then
 edit the settings in `config.yaml` and execute
-
 
     % rake deploy:rsync
