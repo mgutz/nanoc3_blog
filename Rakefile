@@ -7,6 +7,7 @@ namespace :create do
 
   desc "Creates a new article"
   task :article do
+    require 'active_support/core_ext'
     if !ENV['title']
       $stderr.puts "\t[error] Missing title argument.\n\tusage: rake create:article title='article title'"
       exit 1
@@ -27,7 +28,7 @@ excerpt:
 kind: article
 publish: true
 tags: [misc]
-title: "#{title}"
+title: "#{title.titleize}"
 ---
 
 TODO: Add content to `#{full_path}.`
@@ -40,7 +41,7 @@ TEMPLATE
 
   def calc_path(title)
     path = "content/" + @now.strftime("%Y/") 
-    filename = @now.strftime("%m-%d-") + title.to_url.gsub(/-/, '_') + ".md"
+    filename = @now.strftime("%m-%d-") + title.parameterize('_') + ".md"
 
     [path, filename, path + filename]
   end
