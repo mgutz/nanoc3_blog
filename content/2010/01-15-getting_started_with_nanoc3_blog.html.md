@@ -15,7 +15,8 @@ Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 
 From the command line
 
-    % gem install rack rake mime-types nanoc3 haml kramdown builder
+    % gem install bundler
+    % bundle install
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
     % cd your_blog
 

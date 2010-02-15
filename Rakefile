@@ -1,5 +1,6 @@
 require 'nanoc3/tasks'
 require 'fileutils'
+require 'active_support/core_ext'
 
 namespace :create do
   @now = Time.now
@@ -26,7 +27,7 @@ excerpt:
 kind: article
 publish: true
 tags: [misc]
-title: "#{title}"
+title: "#{title.titleize}"
 ---
 
 TODO: Add content to `#{full_path}.`
@@ -39,7 +40,7 @@ TEMPLATE
 
   def calc_path(title)
     path = "content/" + @now.strftime("%Y/") 
-    filename = @now.strftime("%m-%d-") + title.downcase.gsub(/[ \t]+/, '_') + ".md"
+    filename = @now.strftime("%m-%d-") + title.parameterize('_') + ".md"
     # remove special characters
     filename.gsub!(/[:\/\\!\"\']/, '')
 
