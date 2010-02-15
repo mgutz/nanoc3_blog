@@ -16,9 +16,9 @@ Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 From the command line
 
     % gem install bundler
-    % bundle install
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
     % cd your_blog
+    % bundle install
 
 
 ## Previewing the Site
@@ -44,7 +44,7 @@ Edit these two files:
     content/about.md
     content/sticky.md # box content on front page
 
-Delete articles to remove them from site and recompile. Restart preview server if you do.
+Delete articles to remove them from site. Then, recompile and restart server.
 
 To change the front page: `content/index.haml`
 
