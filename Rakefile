@@ -1,12 +1,12 @@
 require 'nanoc3/tasks'
 require 'fileutils'
-require 'active_support/core_ext'
 
 namespace :create do
   @now = Time.now
 
   desc "Creates a new article"
   task :article do
+    require 'active_support/core_ext'
     if !ENV['title']
       $stderr.puts "\t[error] Missing title argument.\n\tusage: rake create:article title='article title'"
       exit 1
