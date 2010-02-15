@@ -41,9 +41,6 @@ TEMPLATE
   def calc_path(title)
     path = "content/" + @now.strftime("%Y/") 
     filename = @now.strftime("%m-%d-") + title.parameterize('_') + ".md"
-    # remove special characters
-    filename.gsub!(/[:\/\\!\"\']/, '')
-
     [path, filename, path + filename]
   end
 end
