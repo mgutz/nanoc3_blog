@@ -42,7 +42,6 @@ TEMPLATE
   def calc_path(title)
     path = "content/" + @now.strftime("%Y/") 
     filename = @now.strftime("%m-%d-") + title.parameterize('_') + ".md"
-
     [path, filename, path + filename]
   end
 end
