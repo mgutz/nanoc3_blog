@@ -19,6 +19,9 @@ Features:
 
 Ruby >= 1.8.7 is required to properly compile the site. One of the dependent gems is not Ruby 1.8.6 friendly. I recommend using [rvm](http://rvm.beginrescueend.com/) to easily switch ruby binaries to either Ruby 1.8.7 or Ruby 1.9.1 before compiling the site.
 
+    # Install nanoc3 alpha. (Bundler 0.9.7 does not handle --prelease)
+    % gem install nanoc3 --prerelease
+
     % gem install bundler
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
     % cd your_blog

@@ -26,7 +26,7 @@ compile '*' do
     raise "Filter is not configured for #{item.identifier} in Rules file."
   end
 
-  # use layouts with .html extension or if specified explicitly
+  # use layouts with .html extension or layout specified in meta
   item[:layout] = "none" unless item[:layout] || File.extname(route_path(item)) == '.html' 
 
   layout 'default' unless item[:layout] == "none"

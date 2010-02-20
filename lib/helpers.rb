@@ -17,9 +17,9 @@ require 'time'
 # 
 def route_path(item)
   # in-memory items have not file
-  return item.identifier + "index.html" if item[:file].nil?
+  return item.identifier + "index.html" if item[:content_filename].nil?
   
-  url = item[:file].path.gsub(/^content/, '')
+  url = item[:content_filename].gsub(/^content/, '')
  
   # determine output extension
   extname = '.' + item[:extension].split('.').last
@@ -55,14 +55,11 @@ end
 # Dates may be encoded in the filename instead of the meta section at the top of each file.
 def add_missing_info
   items.each do |item|
-    if item[:file]
-
-      # nanoc3 >= 3.1 will have this feature, add for older versions
-      item[:extension] ||= File.extname(item[:file].path)
+    if item[:content_filename]
 
       # do not include assets or xml files in sitemap
       ext = File.extname(route_path(item))
-      item[:is_hidden] = true if item[:file].path =~ /assets\// || ext == '.xml'
+      item[:is_hidden] = true if item[:content_filename] =~ /assets\// || ext == '.xml'
     end
 
     # workaround for bug in 3.1pre

@@ -15,6 +15,9 @@ Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 
 From the command line
 
+    # Install nanoc3 alpha. (Bundler 0.9.7 does not handle --prelease)
+    % gem install nanoc3 --prerelease
+
     % gem install bundler
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
     % cd your_blog
