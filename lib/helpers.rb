@@ -22,7 +22,7 @@ def route_path(item)
   url = item[:file].path.gsub(/^content/, '')
  
   # determine output extension
-  extname = item[:extension]
+  extname = '.' + item[:extension].split('.').last
   outext = '.haml'
   if url.match(/(\.[a-zA-Z0-9]+){2}$/) # => *.html.erb, *.html.md ...
     outext = '' # remove 2nd extension
@@ -31,7 +31,7 @@ def route_path(item)
   else
     outext = '.html'
   end
-  url.gsub!(item[:extension], outext)
+  url.gsub!(extname, outext)
   
   if url.include?('-')
     url = url.split('-').join('/')  # /2010/01/01-some_title.html -> /2010/01/01/some_title.html
@@ -64,6 +64,10 @@ def add_missing_info
       ext = File.extname(route_path(item))
       item[:is_hidden] = true if item[:file].path =~ /assets\// || ext == '.xml'
     end
+
+    # workaround for bug in 3.1pre
+    item[:extension] = item[:extension].split('.').last if item[:extension]
+    
 
     next if item[:kind] != "article"
     item[:created_at] ||= derive_created_at(item)
