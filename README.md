@@ -75,20 +75,6 @@ View your page after compiling or refresh in preview mode.
 
 ## Configuration
 
-Edit the configuration files:
-
-    config.yaml
-    content/atom.xml.erb
-
-## Deployment
-
-Transfer `output/*` to your hosted web server. If use rsync, then
-edit the settings in `config.yaml` and execute
-
-    % rake deploy:rsync
-
-## Configuration
-
 Edit these files:
 
     config.yaml
