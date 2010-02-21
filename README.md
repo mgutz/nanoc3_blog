@@ -4,7 +4,7 @@ This is a [nanoc3](http://nanoc.stoneship.org/) blog starter kit. FreeBSD licens
 
 View this project on [nanoc3-blog.mgutz.com](http://nanoc3-blog.mgutz.com/).
 
-Features:
+Features
 
 1. Uses the appropriate filter based on the file extension: .erb -> ERB, .haml -> HAML, .md, .markdown -> BlueCloth, .sass -> SASS
 2. Uses the filesystem\_combined datasource, so a separate .yaml metadata file is not needed for each item.
@@ -14,10 +14,13 @@ Features:
 6. Uses SASS
 7. DISQUS integration.
 
+## Prerequisites
+
+Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 
 ## Installation
 
-Ruby >= 1.8.7 is required to properly compile the site. One of the dependent gems is not Ruby 1.8.6 friendly. I recommend using [rvm](http://rvm.beginrescueend.com/) to easily switch ruby binaries to either Ruby 1.8.7 or Ruby 1.9.1 before compiling the site.
+From the command line
 
     # Install nanoc3 alpha. (Bundler 0.9.7 does not handle --prelease)
     % gem install nanoc3 --prerelease
@@ -28,6 +31,61 @@ Ruby >= 1.8.7 is required to properly compile the site. One of the dependent gem
     % bundle install
 
 
+## Previewing the Site
+
+Compile the site
+
+    # cleans output/ directory. `rm -rf output` works just as well
+    % rake clean 
+
+    # compiles content/* and copies static/* to output/
+    % nanoc3 compile
+
+    # runs preview server and autocompile on page refresh
+    % nanoc3 aco
+
+Preview the site on `http://localhost:3000`
+
+
+## Customizing Existing Content
+
+Edit these two files:
+
+    content/about.md
+    content/sticky.md # box content on front page
+
+Delete articles to remove them from site. Then, recompile and restart server.
+
+To change the front page: `content/index.haml`
+
+To change the site layout: `layouts/default.haml`
+
+To style the site: `content/assets/style.sass`
+
+
+## Adding Content
+
+Edit the Markdown file created by running this command:
+
+    # filename is written to console
+    % rake create:article title='Hello world'
+
+View your page after compiling or refresh in preview mode.
+
+
+## Configuration
+
+Edit the configuration files:
+
+    config.yaml
+    content/atom.xml.erb
+
+## Deployment
+
+Transfer `output/*` to your hosted web server. If use rsync, then
+edit the settings in `config.yaml` and execute
+
+    % rake deploy:rsync
 
 ## Configuration
 
@@ -42,39 +100,6 @@ DISQUS comment service allows users to post comments on your static site. As suc
 use their service. Once registered, simply uncomment and adjust `disqus_shortname` in `config.yaml`. Uncommenting this setting
 enables comments in articles.
 
-
-## Usage
-
-### Adding Content
-
-Create a new file under `content/`. The path to the file must begin with a date in the following format--YYYY/MM/DD. The
-front page uses this date information to select the newest posts. I suggest creating a YYYY subfolder to organize
-your posts:
-
-    % mkdir 2010
-    % cd 2010
-    % mate 01-18-my_first_post.haml
-
-Add the following content:
-
-    ---
-    title: My First Post
-    kind: article
-    created_at: 2010/01/18
-    ---
-    
-    %h1 My First Post
-
-Note: The metadata is stored in the same file, not a separate YAML file. Even stylesheets require an empty metadata
-section. Compile and browse the site:
-
-    % rake clean 
-    % nanoc3 compile
-    % nanoc3 aco
-
-Browse http://localhost:3000 to see generated site.
-
-
 ### Static Files
 
 Put static files into the `static/` folder instead of `content/`. `static/*` is copied to the `output/` folder on compile and preview.
@@ -84,10 +109,10 @@ Put static files into the `static/` folder instead of `content/`. `static/*` is 
 
 Copy `output/*` to the public folder of your web server.
 
-Or, if you like command line and your host provides SSH access, do something like this:
+Or, if you use rsync:
 
-    % rsync -ave ssh output/ mgutz_com:www/
-  
+    # configuration is in config.yml
+    rake deploy:rsync
 
 ## Naming Conventions
 
@@ -98,21 +123,13 @@ your posts.
     2010-01-01-post.haml #=> 2010/01/01/post.html
     2010/01-01-post.haml #=> 2010/01/01/post.html
     2010/01/01-post.haml #=> 2010/01/01/post.html
-   
-Files may follow Rails naming conventions, in which the first extension is retained for the output file
+
+Files may use Rails naming conventions, in which the first extension is retained for the output file
 and the second determines the template processor:
 
     sitemap.xml.erb #=> generate sitemap.xml using erb processor
-   
+
 If a single extension is used, then the files are assumed to be CSS and HTML:
-   
+
     .sass #=> .css
     .* #=> .html
-
-
-## FAQ
-
-Q. Why are my pages not rolling to the front page?
-
-A. You must set `title: Some title`, `kind: article` and `created_at: 2010/01/01` in the metadata section of the file.
-Every file in `content/` must have a metadata section.
