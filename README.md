@@ -73,6 +73,11 @@ Edit the Markdown file created by running this command:
 View your page after compiling or refresh in preview mode.
 
 
+### Adding Static Files
+
+Put static files into the `static/` folder instead of `content/`. `static/*` is copied to the `output/` folder on compile and preview.
+
+
 ## Configuration
 
 Edit these files:
@@ -85,10 +90,6 @@ Edit these files:
 DISQUS comment service allows users to post comments on your static site. As such, one must register your site on [DISQUS](http://disqus.com) to
 use their service. Once registered, simply uncomment and adjust `disqus_shortname` in `config.yaml`. Uncommenting this setting
 enables comments in articles.
-
-### Static Files
-
-Put static files into the `static/` folder instead of `content/`. `static/*` is copied to the `output/` folder on compile and preview.
 
 
 ## Deploying
