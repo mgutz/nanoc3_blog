@@ -7,7 +7,7 @@ View this project on [nanoc3-blog.mgutz.com](http://nanoc3-blog.mgutz.com/).
 Features
 
 1. Uses the appropriate filter based on the file extension: .erb -> ERB, .haml -> HAML, .md, .markdown -> BlueCloth, .sass -> SASS
-2. Uses the filesystem\_combined datasource, so a separate .yaml metadata file is not needed for each item.
+2. Uses the filesystem\_unified datasource, so metadata file or header is optional.
 3. Rolls/archives articles to front page.
 4. Generates tag pages.
 5. Minimalist styling.
