@@ -52,21 +52,17 @@ def create_tag_pages
 end
 
 
-# Dates may be encoded in the filename instead of the meta section at the top of each file.
-def add_missing_info
+def add_update_item_attributes
   items.each do |item|
+    # do not include assets or xml files in sitemap
     if item[:content_filename]
-
-      # do not include assets or xml files in sitemap
       ext = File.extname(route_path(item))
       item[:is_hidden] = true if item[:content_filename] =~ /assets\// || ext == '.xml'
     end
 
-    # workaround for bug in 3.1pre
-    item[:extension] = item[:extension].split('.').last if item[:extension]
-    
-
     next if item[:kind] != "article"
+
+    # filename might contain the created_at date
     item[:created_at] ||= derive_created_at(item)
     # sometimes nanoc3 stores created_at as Date instead of String causing a bunch of issues
     item[:created_at] = item[:created_at].to_s if item[:created_at].is_a?(Date)
