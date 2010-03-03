@@ -8,7 +8,9 @@
     if is_front_page?
       tag_set.join(', ') 
     else
-      @item[:tags].nil? ? '' : @item[:tags].join(', ') 
+      tags = @item[:tags].nil? ? '' : @item[:tags].join(', ') 
+      keywords = @item[:keywords] || ''
+      [keywords, tags].join(', ')
     end
   end
   def link_unless_current(s)
