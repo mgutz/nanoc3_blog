@@ -29,24 +29,23 @@ module MGutz
     # created_at - Optional. Use this date if change status not yet recorded.
     # content - Optional. Content of the file (if it has already been read).
     #
-    # returns { :created_at => '', :updated_at => '', :hash = ''}
+    # returns { :created_at => '', :updated_at => '', :md5 = ''}
     #
     def status(filename, created_at = nil, content = nil)
       content ||= File.readlines(filename)
       md5 = Digest::MD5.hexdigest(content)
       item = @changes[filename.to_sym]
-      write = false
 
-      if item && item[:hash] != hash
-        item[:updated_at] = File.mtime(filename)
-        item[:md5] = md5
-        write_changes
-      else
+      if !item
         item = {}
         item[:created_at] = created_at || File.ctime(filename)
         item[:updated_at] = File.mtime(filename)
         item[:md5] = md5
         @changes[filename.to_sym] = item
+        write_changes
+      elsif item[:md5] != md5
+        item[:updated_at] = File.mtime(filename)
+        item[:md5] = md5
         write_changes
       end
 
