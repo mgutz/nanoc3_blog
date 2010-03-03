@@ -3,3 +3,4 @@ tmp/*
 *.swp
 *~
 .DS_Store
+output.diff
