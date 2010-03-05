@@ -1,21 +1,21 @@
 --- 
 :"content/2009/12-31-end_of_year.haml": 
   :created_at: 2009/12/31
-  :updated_at: 2010-03-03 11:10:53 -08:00
-  :md5: edb84090eb6be1d6a8cbf1f353ed9f0a
+  :updated_at: 2010-03-03 11:54:27 -08:00
+  :digest: a26aafbc69e5e95b7fe2b258bef9513fadfdce5c
 :"content/2010/01-01-ruby_article.haml": 
   :created_at: 2010/01/01
-  :updated_at: 2010-03-03 11:10:53 -08:00
-  :md5: 4c77b5166dc5118ddb08529a3fc6a4b2
+  :updated_at: 2010-03-03 11:54:27 -08:00
+  :digest: 35eab6135db6e757cbec195f0d31d1ceb1b7c4d1
 :"content/2010/01-03-stylesheet_article.haml": 
   :created_at: 2010/01/03
-  :updated_at: 2010-03-03 11:10:53 -08:00
-  :md5: 57fde48a998b8c09635ab0899041e133
+  :updated_at: 2010-03-03 11:54:27 -08:00
+  :digest: f2a1d55406e72627d1b85366492f38570f9ff000
 :"content/2010/01-14-markdown-test.md": 
   :created_at: 2010/01/14
-  :updated_at: 2010-03-03 11:10:53 -08:00
-  :md5: 27f2e2c881d22a47197390c221786e61
+  :updated_at: 2010-03-03 11:54:27 -08:00
+  :digest: 290196131b48b501ad9c5f340b63039991e490d9
 :"content/2010/01-15-getting_started_with_nanoc3_blog.html.md": 
   :created_at: 2010/01/15
-  :updated_at: 2010-03-03 11:10:53 -08:00
-  :md5: f82eee9e0d309f90deba767860cc4580
+  :updated_at: 2010-03-03 11:54:27 -08:00
+  :digest: 51442b02073a976f4b4412fec9aeb07310381ca7
