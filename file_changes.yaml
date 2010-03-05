@@ -1,21 +1,17 @@
 --- 
-:"content/2009/12-31-end_of_year.haml": 
-  :created_at: 2009/12/31
-  :updated_at: 2010-03-03 11:54:27 -08:00
-  :digest: a26aafbc69e5e95b7fe2b258bef9513fadfdce5c
-:"content/2010/01-01-ruby_article.haml": 
-  :created_at: 2010/01/01
-  :updated_at: 2010-03-03 11:54:27 -08:00
-  :digest: 35eab6135db6e757cbec195f0d31d1ceb1b7c4d1
-:"content/2010/01-03-stylesheet_article.haml": 
-  :created_at: 2010/01/03
-  :updated_at: 2010-03-03 11:54:27 -08:00
-  :digest: f2a1d55406e72627d1b85366492f38570f9ff000
-:"content/2010/01-14-markdown-test.md": 
-  :created_at: 2010/01/14
-  :updated_at: 2010-03-03 11:54:27 -08:00
-  :digest: 290196131b48b501ad9c5f340b63039991e490d9
-:"content/2010/01-15-getting_started_with_nanoc3_blog.html.md": 
-  :created_at: 2010/01/15
-  :updated_at: 2010-03-03 11:54:27 -08:00
-  :digest: 51442b02073a976f4b4412fec9aeb07310381ca7
+:"content/2010/02-02-change_is_inevitable.html.md": 
+  :created_at: 2010/02/02
+  :updated_at: 2010-03-04 18:30:09 -08:00
+  :digest: 7c10bcda36353b552a0c0cd68d2ce55384febe94
+:"content/2010/02-03-hostgator_and_rails.html.md": 
+  :created_at: 2010/02/03
+  :updated_at: 2010-03-04 18:30:09 -08:00
+  :digest: a5342952a575661c3e9d36fbbcf02ab4e55ed5e0
+:"content/2010/02-07-nanoc3_blog_progress.md": 
+  :created_at: 2010/02/07
+  :updated_at: 2010-03-04 18:30:09 -08:00
+  :digest: ab3af20016322d5946269f6f5216f1cd9c763fa3
+:"content/2010/02-12-add_scala_syntax_to_vim.md": 
+  :created_at: 2010/02/12
+  :updated_at: 2010-03-04 18:30:09 -08:00
+  :digest: 26fd5079b91e068f4578cde118057bbd544fb600
