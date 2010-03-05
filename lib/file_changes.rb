@@ -1,9 +1,9 @@
 require 'yaml'
-require 'digest/md5'
+require 'digest/sha1'
 
 module MGutz
 
-  # Tracks a file's last content change using MD5.
+  # Tracks a file's last content change using SHA1 digest algorithm.
   #
   # File.mtime is not sufficient to detect if content has been updated. This
   # class will set `updated_at` if it detects a change in the content
@@ -29,23 +29,23 @@ module MGutz
     # created_at - Optional. Use this date if change status not yet recorded.
     # content - Optional. Content of the file (if it has already been read).
     #
-    # returns { :created_at => '', :updated_at => '', :md5 = ''}
+    # returns { :created_at => '', :updated_at => '', :digest = ''}
     #
     def status(filename, created_at = nil, content = nil)
       content ||= File.readlines(filename)
-      md5 = Digest::MD5.hexdigest(content)
+      digest = Digest::SHA1.hexdigest(content)
       item = @changes[filename.to_sym]
 
       if !item
         item = {}
         item[:created_at] = created_at || File.ctime(filename)
         item[:updated_at] = File.mtime(filename)
-        item[:md5] = md5
+        item[:digest] = digest
         @changes[filename.to_sym] = item
         write_changes
-      elsif item[:md5] != md5
+      elsif item[:digest] != digest 
         item[:updated_at] = File.mtime(filename)
-        item[:md5] = md5
+        item[:digest] = digest 
         write_changes
       end
 
