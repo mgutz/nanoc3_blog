@@ -29,7 +29,8 @@
   %head
     %title= "#{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
-    %meta(name="keywords" content="#{keywords}") 
+    %meta(name="keywords" content="#{keywords}")
+    %meta(name="description" content="#{@item[:excerpt]}")
     %link(href="/assets/css/reset.css" rel="stylesheet" type="text/css")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
 
