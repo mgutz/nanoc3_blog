@@ -1,11 +1,13 @@
 source :gemcutter
 
+#Cannot pass --pre argument. gem install nanoc3 --pre
+#gem "nanoc3"
 gem "rack"
 gem "rake"
 gem "mime-types"
 gem "cri"
-#gem "nanoc3", "3.1.0a1"
 gem "haml"
 gem "kramdown"
 gem "builder"
 gem "activesupport"
+gem "stringex"
