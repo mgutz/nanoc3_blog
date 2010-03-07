@@ -1,6 +1,6 @@
 ---
 created_at: 2010/03/06
-excerpt: Screencast on how to get started with the Scala programming language using simple-build-tool (sbt) and Eclipse. 
+excerpt: Screencast on how to get started with the Scala programming language using simple-build-tool (sbt) and Eclipse
 kind: article
 publish: true
 tags: [scala]
