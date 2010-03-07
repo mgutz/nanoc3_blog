@@ -1,6 +1,6 @@
 ---
 created_at: 2010/03/06
-excerpt: Screencast on how to get started with the Scala programming language using SBT and/or Eclipse. 
+excerpt: Screencast on how to get started with the Scala programming language using simple-build-tool (sbt) and Eclipse. 
 kind: article
 publish: true
 tags: [scala]
@@ -18,8 +18,8 @@ application. I spent a few days reading and trying many Scala tools and librarie
 
 This screencast covers how to create a `Scala` console-based project.
 I use the simple-build-tool (`sbt`) to compile, run, test and and then eclipsify
-a project. I briefly cover where to put source code, tests and how to use Eclipse
-to edit and debug the project.
+a project. I briefly cover where to put source code, tests and how to edit
+and debug the project within the Eclipse IDE.
 
 ## Preqrequisites
 
@@ -40,7 +40,7 @@ These are optional
 0. Clone [sbt-console-template](http://github.com/mgutz/sbt-console-template)
 1. From `sbt` console
 
-        # update depencies
+        # update dependencies
         > update
     
         # run project
