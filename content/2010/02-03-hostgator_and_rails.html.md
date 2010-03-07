@@ -4,6 +4,7 @@ kind: article
 tags: [rails, hosting]
 created_at: 2010/02/03
 excerpt: Why I Switched to HostGator 
+publish: false
 ---
 
 Googling for honest opinions on web hosting is a craps shoot. I have a feeling each company or more likely their resellers hire commenters to write negative reviews about each other.
