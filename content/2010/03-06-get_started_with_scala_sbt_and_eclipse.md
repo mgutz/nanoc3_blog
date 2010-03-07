@@ -57,7 +57,7 @@ These are optional
 Thanks to all those in the prerequisites. Here is other good stuff used.
 
 - [OH MY ZSHELL!](http://github.com/robbyrussell/oh-my-zsh)
-- [SbtEclipsify](http://github.com/musk/SbtEclipsify) - Makes sbt project Eclipse friendly
-- [Scalatest](http://www.scalatest.org/) - Testing 
+- [SbtEclipsify](http://github.com/musk/SbtEclipsify)
+- [Scalatest](http://www.scalatest.org/)
 - [Vim](http://www.vim.org)
 
