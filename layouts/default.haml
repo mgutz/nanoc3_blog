@@ -8,7 +8,9 @@
     if is_front_page?
       tag_set.join(', ') 
     else
-      @item[:tags].nil? ? '' : @item[:tags].join(', ') 
+      tags = @item[:tags].nil? ? '' : @item[:tags].join(', ') 
+      keywords = @item[:keywords] || ''
+      [keywords, tags].join(', ')
     end
   end
   def link_unless_current(s)
@@ -27,7 +29,8 @@
   %head
     %title= "#{@item[:title]}"
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
-    %meta(name="keywords" content="#{keywords}") 
+    %meta(name="keywords" content="#{keywords}")
+    %meta(name="description" content="#{@item[:excerpt]}")
     %link(href="/assets/css/reset.css" rel="stylesheet" type="text/css")
     %link(href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css")
 

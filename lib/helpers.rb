@@ -17,12 +17,12 @@ require 'time'
 # 
 def route_path(item)
   # in-memory items have not file
-  return item.identifier + "index.html" if item[:file].nil?
+  return item.identifier + "index.html" if item[:content_filename].nil?
   
-  url = item[:file].path.gsub(/^content/, '')
+  url = item[:content_filename].gsub(/^content/, '')
  
   # determine output extension
-  extname = item[:extension]
+  extname = '.' + item[:extension].split('.').last
   outext = '.haml'
   if url.match(/(\.[a-zA-Z0-9]+){2}$/) # => *.html.erb, *.html.md ...
     outext = '' # remove 2nd extension
@@ -31,7 +31,7 @@ def route_path(item)
   else
     outext = '.html'
   end
-  url.gsub!(item[:extension], outext)
+  url.gsub!(extname, outext)
   
   if url.include?('-')
     url = url.split('-').join('/')  # /2010/01/01-some_title.html -> /2010/01/01/some_title.html
@@ -46,31 +46,36 @@ def create_tag_pages
     items << Nanoc3::Item.new(
       "= render('_tag_page', :tag => '#{tag}')",           # use locals to pass data
       { :title => "Category: #{tag}", :is_hidden => true}, # do not include in sitemap.xml
-      "/tags/#{tag}/"                                      # identifier
+      "/tags/#{tag}/",                                     # identifier
+      :binary => false
     )
   end
 end
 
 
-# Dates may be encoded in the filename instead of the meta section at the top of each file.
-def add_missing_info
+def add_update_item_attributes
+  changes = MGutz::FileChanges.new
+
   items.each do |item|
-    if item[:file]
-
-      # nanoc3 >= 3.1 will have this feature, add for older versions
-      item[:extension] ||= File.extname(item[:file].path)
-
-      # do not include assets or xml files in sitemap
+    # do not include assets or xml files in sitemap
+    if item[:content_filename]
       ext = File.extname(route_path(item))
-      item[:is_hidden] = true if item[:file].path =~ /assets\// || ext == '.xml'
+      item[:is_hidden] = true if item[:content_filename] =~ /assets\// || ext == '.xml'
     end
 
-    next if item[:kind] != "article"
-    item[:created_at] ||= derive_created_at(item)
-    # sometimes nanoc3 stores created_at as Date instead of String causing a bunch of issues
-    item[:created_at] = item[:created_at].to_s if item[:created_at].is_a?(Date)
+    if item[:kind] == "article"
+      # filename might contain the created_at date
+      item[:created_at] ||= derive_created_at(item)
+      # sometimes nanoc3 stores created_at as Date instead of String causing a bunch of issues
+      item[:created_at] = item[:created_at].to_s if item[:created_at].is_a?(Date)
+
+      # sets updated_at based on content change date not file time
+      change = changes.status(item[:content_filename], item[:created_at], item.raw_content)
+      item[:updated_at] = change[:updated_at].to_s
+    end
   end
 end
+
 
 # Copy static assets outside of content instead of having nanoc3 process them.
 def copy_static

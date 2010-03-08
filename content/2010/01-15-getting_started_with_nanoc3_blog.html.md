@@ -4,6 +4,7 @@ kind: article
 tags: [haml, kramdown, nanoc3, sass]
 created_at: 2010/01/15
 excerpt: Get started with nanoc3_blog
+keywords: nanoc blog example, nanoc3 blog example
 _:
 ---
 
@@ -16,6 +17,9 @@ Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 ## Installation
 
 From the command line
+
+    # Install nanoc3 alpha. (Bundler 0.9.7 does not handle --prelease)
+    % gem install nanoc3 --prerelease
 
     % gem install bundler
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
