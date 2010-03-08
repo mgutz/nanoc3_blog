@@ -25,11 +25,11 @@ and debug the project within the Eclipse IDE.
 
 You must have the following pre-installed
 
-- [`git`](http://git-scm.com/download)
 - [simple-build-tool (`sbt`)](http://code.google.com/p/simple-build-tool/)
 
 These are optional
 
+- [`git`](http://git-scm.com/download). Git is not required as the video suggests.
 - [Eclipse 3.5.2](http://www.eclipse.org/downloads/)
 - [scala-ide plugin](http://www.scala-lang.org/node/94)
 
@@ -37,7 +37,7 @@ These are optional
 
 ## Steps
 
-0. Clone [sbt-console-template](http://github.com/mgutz/sbt-console-template)
+0. Clone OR download/extract source from [sbt-console-template](http://github.com/mgutz/sbt-console-template)
 1. From `sbt` console
 
         # update dependencies
