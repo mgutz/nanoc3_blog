@@ -8,8 +8,6 @@ keywords: nanoc blog example, nanoc3 blog example
 _:
 ---
 
-This kit is obsolete, please see newer project [http://nanoc-blog-kit.mgutz.com]
-
 ## Prerequisites
 
 Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
@@ -18,8 +16,8 @@ Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 
 From the command line
 
-    # Install nanoc3 alpha. (Bundler 0.9.7 does not handle --prelease)
-    % gem install nanoc3 --prerelease
+    # Install nanoc 3.1 beta. (Bundler 0.9.7 does not handle --pre)
+    % gem install nanoc3 --pre
 
     % gem install bundler
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog

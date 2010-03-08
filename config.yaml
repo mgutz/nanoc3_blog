@@ -16,7 +16,7 @@ deploy:
     options: ['-ave ssh', '--exclude=.DS_Store', '--exclude=*~']
 
 # domain to which this site is deployed
-base_url: http://nanoc3-blog.mgutz.com
+base_url: http://nanoc-blog-kit.mgutz.com
 
 google_analytics:
   domain: mgutz.com
