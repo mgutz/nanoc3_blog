@@ -7,6 +7,8 @@ excerpt: Get started with nanoc3_blog
 _:
 ---
 
+This kit is obsolete, please see newer project [http://nanoc-blog-kit.mgutz.com]
+
 ## Prerequisites
 
 Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
