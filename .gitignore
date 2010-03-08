@@ -4,3 +4,4 @@ tmp/*
 *~
 .DS_Store
 .bundle
+output.diff
