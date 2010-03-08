@@ -23,7 +23,7 @@ and debug the project within the Eclipse IDE.
 
 ## Preqrequisites
 
-You must have the following pre-installed
+This must be installed
 
 - [simple-build-tool (sbt)](http://code.google.com/p/simple-build-tool/)
 
