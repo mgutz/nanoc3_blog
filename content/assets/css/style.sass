@@ -1,17 +1,19 @@
 //// Variables
-!base_color = #333
+!base_color = #202020
 !heading_color = !base_color
-!normal_color = !base_color
-!passive_color =  #666
+!normal_color = #404040
+!passive_color =  #606060
 
 // ruby per wikipedia
-!logo_color = #007FFF
+!logo_background_color = #eee
 
-!link_color = #444
-!link_hover_color = !logo_color
+!link_color = !heading_color
+!link_hover_color = #007fff
 !link_bg = #fff
 
 !tag_color = !link_color
+
+!border_color = #bbbbbb
 
 
 //// Mixins
@@ -27,7 +29,7 @@
   font-family: baskerville, palatino, 'palatino linotype', georgia, serif
  
 = monospace
-  font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
+  font-family: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
 
 = ul_left 
   ul
@@ -53,9 +55,9 @@ body
 
 a
   background-color = !link_bg
-  border-bottom: dotted 1px #666
+  border-bottom = solid 1px !link_color 
   color = !link_color
-  text-decoration: none
+  text-decoration: none 
   margin: 2px
 
   &:link, &:visited
@@ -111,40 +113,42 @@ ol, ul
   
 pre
   background-color: #f8f8f8
-  border-left = 3px "double" !passive_color
+  border-left = 3px "double" !border_color
   padding: .5em 
 
 
 #header
-  margin-bottom: 2em
+  //margin-bottom: 2em
   overflow: auto
   .logo
     -webkit-border-radius: 12px 0 0
     -moz-border-radius: 12px 0 0
-    background-color= !logo_color
-    color: #fff
+    background-color= !logo_background_color
+    color: #000
     float: left
     font-size: 30px
     +logo-font
     padding: 0 .3em
+    bottom-margin: 0.7em
     // css3 inset effect
     //text-shadow: 0px -1px 1px #aaa
     a
       +sans
-      color: #fff
-      background-color= !logo_color
+      color: #000
+      background-color= !logo_background_color
       border: none
       +logo-font
       text-decoration: none
       &:link, &:visited
-        color: #fff !important
+        //color: #000 !important
       &:hover
-        color: #000 !important
+        //color: #000 !important
+        border-bottom: solid 1px #000
         text-decoration: none
     
   #nav
     float: right
-    margin-top: 20px
+    margin-top: 10px
     text-align: right
     ul
       li
@@ -210,14 +214,6 @@ table.colophon
     margin-bottom: .5em 
   p
     margin-bottom: .5em
-
-.logo
-  +sans
-  color = !logo_color
-  margin-bottom: .7em
-  a
-    +sans
-    color = !logo_color !important
 
 .meta
   font-size: 13px

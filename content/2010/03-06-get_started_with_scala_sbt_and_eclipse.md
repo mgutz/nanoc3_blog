@@ -25,11 +25,11 @@ and debug the project within the Eclipse IDE.
 
 You must have the following pre-installed
 
-- [simple-build-tool (`sbt`)](http://code.google.com/p/simple-build-tool/)
+- [simple-build-tool (sbt)](http://code.google.com/p/simple-build-tool/)
 
 These are optional
 
-- [`git`](http://git-scm.com/download). Git is not required as the video suggests.
+- [git](http://git-scm.com/download) is not required. The source code may be downloaded as an archive.
 - [Eclipse 3.5.2](http://www.eclipse.org/downloads/)
 - [scala-ide plugin](http://www.scala-lang.org/node/94)
 
