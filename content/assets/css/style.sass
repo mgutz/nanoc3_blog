@@ -1,18 +1,20 @@
 //// Variables
-!base_color = #333
+!base_color = #202020
 !heading_color = !base_color
-!normal_color = !base_color
-!passive_color =  #666
+!normal_color = #404040
+!passive_color =  #606060
 
 // ruby per wikipedia
-!logo_color = #E0115F
+!logo_color = #fff
+!logo_background_color = #e0115f
 
-!link_color = #444
-!link_hover_color = !logo_color
+!link_color = !heading_color
+!link_hover_color = #e0115f
 !link_bg = #fff
 
 !tag_color = !link_color
 
+!border_color = #bbbbbb
 
 
 //// Mixins
@@ -22,13 +24,13 @@
   
 = serif
   //font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
-  font-family: Georgia,Cambria,"Times New Roman",Times,serif 
+  font-family: Georgia,Cambria, "Times New Roman", Times, serif 
 
 = logo-font
-  font-family: baskerville, palatino, 'palatino linotype', georgia,serif
+  font-family: baskerville, palatino, 'palatino linotype', georgia, serif
  
 = monospace
-  font-family: Menlo, Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
+  font-family: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
 
 = ul_left 
   ul
@@ -54,9 +56,9 @@ body
 
 a
   background-color = !link_bg
-  border-bottom: dotted 1px #666
+  border-bottom = "solid" 1px !link_color 
   color = !link_color
-  text-decoration: none
+  text-decoration: none 
   margin: 2px
 
   &:link, &:visited
@@ -105,47 +107,54 @@ h3
   font-size: 1.1em
 
 ol, ul
-  list-style-type: disc 
   padding-left: 30px
   li
     line-height: 1.5em
   
+ul
+  list-style-type: circle 
+
+ol
+  list-style-type: decimal
+
 pre
   background-color: #f8f8f8
-  border-left = 3px "double" !passive_color
+  border-left = 3px "double" !border_color
   padding: .5em 
 
 
 #header
-  margin-bottom: 2em
+  //margin-bottom: 2em
   overflow: auto
   .logo
     -webkit-border-radius: 12px 0 0
     -moz-border-radius: 12px 0 0
-    background-color= !logo_color
-    color: #fff
+    background-color= !logo_background_color
+    color= !logo_color
     float: left
     font-size: 30px
     +logo-font
     padding: 0 .3em
+    bottom-margin: 0.7em
     // css3 inset effect
     //text-shadow: 0px -1px 1px #aaa
     a
       +sans
-      color: #fff
-      background-color= !logo_color
+      color= !logo_color
+      background-color= !logo_background_color
       border: none
       +logo-font
       text-decoration: none
       &:link, &:visited
-        color: #fff !important
+        //color: #000 !important
       &:hover
-        color: #000 !important
+        //color: #000 !important
+        border-bottom= "solid" 1px !logo_color
         text-decoration: none
     
   #nav
     float: right
-    margin-top: 20px
+    margin-top: 10px
     text-align: right
     ul
       li
@@ -194,6 +203,10 @@ pre
 .article, .excerpt, .featured
   margin-bottom: 2.5em
 
+table.colophon
+  td:first-of-type
+    width: 175px
+
 .article, .featured
   h1
     margin-bottom: .25em
@@ -207,14 +220,6 @@ pre
     margin-bottom: .5em 
   p
     margin-bottom: .5em
-
-.logo
-  +sans
-  color = !logo_color
-  margin-bottom: .7em
-  a
-    +sans
-    color = !logo_color !important
 
 .meta
   font-size: 13px
@@ -239,3 +244,12 @@ a.tag
     
 .tags-page
   +ul_left
+
+.screencast
+  text-align: center
+  border: 3px double #bbbbbb 
+  padding-top: 30px
+  div:
+    padding: 0
+    margin-bottom: 0
+    font-size: .5em !important
