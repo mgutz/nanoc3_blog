@@ -29,15 +29,16 @@ This must be installed
 
 These are optional
 
-- [git](http://git-scm.com/download) is not required. The source code may be downloaded as an archive.
+- [git](http://git-scm.com/download)
 - [Eclipse 3.5.2](http://www.eclipse.org/downloads/)
 - [scala-ide plugin](http://www.scala-lang.org/node/94)
-
-
 
 ## Steps
 
 0. Clone OR download/extract source from [sbt-console-template](http://github.com/mgutz/sbt-console-template)
+
+        % git clone git@github.com:mgutz/sbt-console-template.git your-project
+
 1. From `sbt` console
 
         # update dependencies
@@ -54,10 +55,10 @@ These are optional
 
 ## Credits
 
-Thanks to all those in the prerequisites. Here is other good stuff used.
+Thanks to all those in the prerequisites. Other good stuff:
 
+- [MacVim](http://code.google.com/p/macvim/)
 - [OH MY ZSHELL!](http://github.com/robbyrussell/oh-my-zsh)
 - [SbtEclipsify](http://github.com/musk/SbtEclipsify)
 - [Scalatest](http://www.scalatest.org/)
-- [MacVim](http://code.google.com/p/macvim/)
 
