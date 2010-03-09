@@ -22,6 +22,7 @@ compile '*' do
   elsif ext == 'haml' || ext.nil?
     filter :haml
   elsif ext == 'md' || ext == 'markdown'
+    filter :erb
     filter :kramdown
   else
     raise "Filter is not configured for #{item.identifier} in Rules file."
