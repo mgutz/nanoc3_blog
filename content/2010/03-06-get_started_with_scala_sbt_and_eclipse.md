@@ -23,11 +23,11 @@ and debug the project within the Eclipse IDE.
 
 ## Preqrequisites
 
-This must be installed
+Must be installed
 
 - [simple-build-tool (sbt)](http://code.google.com/p/simple-build-tool/)
 
-These are optional
+Optional
 
 - [git](http://git-scm.com/download)
 - [Eclipse 3.5.2](http://www.eclipse.org/downloads/)
@@ -53,12 +53,9 @@ These are optional
         # eclipsify
         > eclipse
 
-## Credits
+## Related Good Stuff
 
-Thanks to all those in the prerequisites. Other good stuff:
-
-- [MacVim](http://code.google.com/p/macvim/)
+- "editing goodness" == [MacVim](http://code.google.com/p/macvim/) + [NERD Tree](http://www.vim.org/scripts/script.php?script_id=1658) + [custom underwater colorscheme](http://www.vim.org/scripts/script.php?script_id=2977)
 - [OH MY ZSHELL!](http://github.com/robbyrussell/oh-my-zsh)
 - [SbtEclipsify](http://github.com/musk/SbtEclipsify)
 - [Scalatest](http://www.scalatest.org/)
-
