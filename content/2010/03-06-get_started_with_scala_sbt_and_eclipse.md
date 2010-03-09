@@ -13,8 +13,8 @@ title: "Get Started With Scala, Sbt And Eclipse"
 </div>
 
 Getting started with any programming language is a daunting task, let alone
-getting your workstation in a state to create a non-trivial
-application. I spent a few days reading and trying many Scala tools and libraries.
+configuring your workstation to create a non-trivial
+application. I spent a few days reading and trying many Scala tools and libraries. I share some of my findings in this screencast.
 
 This screencast covers how to create a `Scala` console-based project.
 I use the simple-build-tool (`sbt`) to compile, run, test and and then eclipsify
