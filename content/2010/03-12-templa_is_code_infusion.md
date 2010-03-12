@@ -32,7 +32,7 @@ some cases, naming conventions are used to derive the type.
 
 _Templa_ offers a different approach by infusing code into
 functions. The code is the output of text transformation from template
-markup such as JSP, HAML, etc. As part of the function, the infused code access to any local
+markup such as JSP, HAML, etc. As part of the function, the infused code has access to any local
 variables (private or public) as well as instance and class variables.
 _Templa_ lets developers
 think in their favorite language instead of yet another language.
