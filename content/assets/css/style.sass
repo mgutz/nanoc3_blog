@@ -3,6 +3,8 @@
 !heading_color = !base_color
 !normal_color = #404040 
 !passive_color =  #606060
+!code_color = #485048
+!code_background_color = #f8f8f8
 
 // ruby per wikipedia
 !logo_color = #000
@@ -71,8 +73,9 @@ a
 
 code, pre
   +monospace
-  color = !normal_color
+  color = !code_color
   font-size: 13px 
+
 
 blockquote, div, ol, p, pre, ul
   line-height: 1.4em
@@ -118,7 +121,7 @@ ol
   list-style-type: decimal
 
 pre
-  background-color: #f8f8f8
+  background-color = !code_background_color
   border-left = 3px "double" !border_color
   padding: .5em
   line-height: 1.5em
