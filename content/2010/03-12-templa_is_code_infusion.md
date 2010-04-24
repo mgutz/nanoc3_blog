@@ -2,7 +2,7 @@
 created_at: 2010/03/12
 excerpt: Templa is a simple, compiled and object-oriented approach for templates on the JVM.
 kind: article
-publish: true
+publish: false
 tags: [scala, web]
 keywords: scala template engine, scala code infusion, java code infusion, java template engine
 title: "Templa Is Code Infusion"
