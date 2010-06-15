@@ -1,18 +1,18 @@
 //// Variables
-!base_color = #202020
-!heading_color = !base_color
-!normal_color = #404040 
-!passive_color =  #606060
-!code_color = #485048
-!code_background_color = #f8f8f8
+$base_color: #202020
+$heading_color: $base_color
+$normal_color: #404040
+$passive_color: #606060
+$code_color: #485048
+$code_background_color: #f8f8f8
 
 // ruby per wikipedia
-!logo_color = #000
-!logo_background_color = #eee
+$logo_color: black
+$logo_background_color: #eeeeee
 
-!link_color = !heading_color
-!link_hover_color = #007fff
-!link_bg = #fff
+$link_color: $heading_color
+$link_hover_color: #007fff
+$link_bg: white
 
 $tag_color: $link_color
 
@@ -27,14 +27,14 @@ $border_color: #bbbbbb
   //font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
   font-family: Georgia, Cambria, "Times New Roman", Times, serif
 
-= logo-font
-  font-family: baskerville, palatino, 'palatino linotype', georgia, serif
- 
-= monospace
+=logo-font
+  font-family: baskerville, palatino, "palatino linotype", georgia, serif
+
+=monospace
   //font-family: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
   font-family: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
 
-= ul_left 
+=ul_left
   ul
     padding: 0
     list-style-type: none
@@ -70,8 +70,8 @@ a
 
 code, pre
   +monospace
-  color = !code_color
-  font-size: 13px 
+  color: $code_color
+  font-size: 13px
 
 blockquote, div, ol, p, pre, ul
   line-height: 1.4em
@@ -117,9 +117,9 @@ ol
   list-style-type: decimal
 
 pre
-  background-color = !code_background_color
-  border-left = 3px "double" !border_color
-  padding: .5em
+  background-color: $code_background_color
+  border-left: 3px double $border_color
+  padding: 0.5em
   line-height: 1.5em
 
 #header
@@ -211,7 +211,7 @@ table.colophon
   clear: both
 
 .excerpt
-  margin-bottom: 1.4em 
+  margin-bottom: 1.4em
   h2
     margin-bottom: 0.5em
   p
