@@ -1,7 +1,7 @@
 ---
 title: Getting Started With nanoc3_blog 
 kind: article
-tags: [haml, kramdown, nanoc3, sass]
+tags: [haml, nanoc3, sass]
 created_at: 2010/01/15
 excerpt: Get started with nanoc3_blog
 keywords: nanoc blog example, nanoc3 blog example

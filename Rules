@@ -23,7 +23,7 @@ compile '*' do
     filter :haml
   elsif ext == 'md' || ext == 'markdown'
     filter :erb
-    filter :kramdown
+    filter :rdiscount
   else
     raise "Filter is not configured for #{item.identifier} in Rules file."
   end

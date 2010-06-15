@@ -1,52 +1,50 @@
 //// Variables
-!base_color = #202020
-!heading_color = !base_color
-!normal_color = #404040
-!passive_color =  #606060
+$base_color: #202020
+$heading_color: $base_color
+$normal_color: #404040
+$passive_color: #606060
 
 // ruby per wikipedia
-!logo_color = #fff
-!logo_background_color = #e0115f
+$logo_color: white
+$logo_background_color: #e0115f
 
-!link_color = !heading_color
-!link_hover_color = #e0115f
-!link_bg = #fff
+$link_color: $heading_color
+$link_hover_color: #e0115f
+$link_bg: white
 
-!tag_color = !link_color
+$tag_color: $link_color
 
-!border_color = #bbbbbb
-
+$border_color: #bbbbbb
 
 //// Mixins
 
-= sans
+=sans
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif
-  
-= serif
-  //font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
-  font-family: Georgia,Cambria, "Times New Roman", Times, serif 
 
-= logo-font
-  font-family: baskerville, palatino, 'palatino linotype', georgia, serif
- 
-= monospace
+=serif
+  //font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif
+
+=logo-font
+  font-family: baskerville, palatino, "palatino linotype", georgia, serif
+
+=monospace
   font-family: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace
 
-= ul_left 
+=ul_left
   ul
     padding: 0
     list-style-type: none
 
-
 //// Styles
-  
+
 *
   +serif
-  color = !normal_color
+  color: $normal_color
 
 body
-  font-size: 16px 
-  border-top: 2px solid #ccc 
+  font-size: 16px
+  border-top: 2px solid #cccccc
   min-width: 800px
 
 #main
@@ -55,24 +53,22 @@ body
   padding: 3em 0
 
 a
-  background-color = !link_bg
-  border-bottom = "solid" 1px !link_color 
-  color = !link_color
-  text-decoration: none 
+  background-color: $link_bg
+  border-bottom: solid 1px $link_color
+  color: $link_color
+  text-decoration: none
   margin: 2px
-
   &:link, &:visited
-    color = !link_color
-  
+    color: $link_color
   &:hover
-    color = !link_hover_color
+    color: $link_hover_color
     text-decoration: none
-    border-bottom = "solid" 1px !link_hover_color
+    border-bottom: solid 1px $link_hover_color
 
 code, pre
   +monospace
-  color = !normal_color
-  font-size: 13px 
+  color: $normal_color
+  font-size: 13px
 
 blockquote, div, ol, p, pre, ul
   line-height: 1.5em
@@ -80,24 +76,24 @@ blockquote, div, ol, p, pre, ul
 
 h1, h2, h3, h4, h5
   +sans
-  color = !heading_color
+  color: $heading_color
   font-weight: normal
   a
     +sans
-    color = !heading_color !important
+    color: $heading_color !important
     text-decoration: none
     border-bottom: none
     &:hover
-      color = !link_hover_color !important
+      color: $link_hover_color !important
 
 h1
-  border-bottom: 1px solid #eee
+  border-bottom: 1px solid #eeeeee
   font-size: 1.8em
   padding-bottom: 6px
   margin-bottom: 1em
 
 h2, h3
-  color = !heading_color
+  color: $heading_color
   margin: 1.5em 0 1em
 
 h2
@@ -110,18 +106,17 @@ ol, ul
   padding-left: 30px
   li
     line-height: 1.5em
-  
+
 ul
-  list-style-type: circle 
+  list-style-type: circle
 
 ol
   list-style-type: decimal
 
 pre
   background-color: #f8f8f8
-  border-left = 3px "double" !border_color
-  padding: .5em 
-
+  border-left: 3px double $border_color
+  padding: 0.5em
 
 #header
   //margin-bottom: 2em
@@ -129,19 +124,19 @@ pre
   .logo
     -webkit-border-radius: 12px 0 0
     -moz-border-radius: 12px 0 0
-    background-color= !logo_background_color
-    color= !logo_color
+    background-color: $logo_background_color
+    color: $logo_color
     float: left
     font-size: 30px
     +logo-font
-    padding: 0 .3em
+    padding: 0 0.3em
     bottom-margin: 0.7em
     // css3 inset effect
     //text-shadow: 0px -1px 1px #aaa
     a
       +sans
-      color= !logo_color
-      background-color= !logo_background_color
+      color: $logo_color
+      background-color: $logo_background_color
       border: none
       +logo-font
       text-decoration: none
@@ -149,9 +144,8 @@ pre
         //color: #000 !important
       &:hover
         //color: #000 !important
-        border-bottom= "solid" 1px !logo_color
+        border-bottom: solid 1px $logo_color
         text-decoration: none
-    
   #nav
     float: right
     margin-top: 10px
@@ -160,29 +154,27 @@ pre
       li
         display: inline
   .byline
-    color = !passive_color
+    color: $passive_color
 
 #other-articles
   margin-top: 4em
   +ul_left
   h3
-    margin: 0 0 .5em
-
+    margin: 0 0 0.5em
   .newer
     text-align: right
     float: right
-
   .older
     float: left
-    
+
 #taglist
-  font-size: .8em
+  font-size: 0.8em
   margin-top: 3em
   text-align: right
 
 #sticky
   //border: 3px double #eee
-  margin-bottom: 3.2em  
+  margin-bottom: 3.2em
   .body
     margin: auto
     text-align: center
@@ -209,17 +201,17 @@ table.colophon
 
 .article, .featured
   h1
-    margin-bottom: .25em
+    margin-bottom: 0.25em
 
 .clear
   clear: both
 
 .excerpt
-  margin-bottom: 1.5em 
+  margin-bottom: 1.5em
   h2
-    margin-bottom: .5em 
+    margin-bottom: 0.5em
   p
-    margin-bottom: .5em
+    margin-bottom: 0.5em
 
 .meta
   font-size: 13px
@@ -227,29 +219,29 @@ table.colophon
     margin: 0px
     padding-left: 0
     li
-      color = !passive_color
+      color: $passive_color
       display: inline
 
 .passive
-  color = !passive_color
+  color: $passive_color
 
 a.tag
-  color = !tag_color !important
-  padding: 0 .1em 0
+  color: $tag_color !important
+  padding: 0 0.1em 0
   &:hover
-    color = !link_hover_color !important
+    color: $link_hover_color !important
 
 .tags
   text-transform: lowercase
-    
+
 .tags-page
   +ul_left
 
 .screencast
   text-align: center
-  border: 3px double #bbbbbb 
+  border: 3px double #bbbbbb
   padding-top: 30px
   div:
     padding: 0
     margin-bottom: 0
-    font-size: .5em !important
+    font-size: 0.5em !important

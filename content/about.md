@@ -14,7 +14,7 @@ Features:
 
 - Minimalist CSS site
 - Uses file extension to determine filter:
-  `{'.erb' => :erb, '.md' => :kramdown, '.markdown' => :kramdown,'.haml' => :haml, '.sass' => :sass}`
+  `{'.erb' => :erb, '.md' => :rdiscount, '.markdown' => :kramdown,'.haml' => :haml, '.sass' => :sass}`
 - Configurable 0..n full articles on the front page
 - Configurable 0..n excerpted links on the front page
 - Tagging / generation of tag pages
