@@ -16,14 +16,10 @@ Know how to use `terminal, Ruby, HAML, SASS` and `Markdown`.
 
 From the command line
 
-    # Install nanoc 3.1 beta. (Bundler 0.9.7 does not handle --pre)
-    % gem install nanoc3 --pre
-
     % gem install bundler
     % git clone git://github.com/mgutz/nanoc3_blog.git your_blog
     % cd your_blog
     % bundle install
-
 
 ## Previewing the Site
 
@@ -33,10 +29,10 @@ Compile the site
     % rake clean 
 
     # compiles content/* and copies static/* to output/
-    % nanoc3 compile
+    % nanoc compile
 
     # runs preview server and autocompile on page refresh
-    % nanoc3 aco
+    % nanoc aco
 
 Preview the site on `http://localhost:3000`
 
