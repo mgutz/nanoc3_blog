@@ -1,12 +1,15 @@
+$KCODE = 'UTF8'
+
 require 'nanoc3/tasks'
 require 'fileutils'
+require 'active_support/core_ext'
+require 'active_support/multibyte'
 
 namespace :create do
-  @now = Time.now
+  @ymd = Time.now.to_s(:db).split(' ')[0]
 
   desc "Creates a new article"
   task :article do
-    require 'active_support/core_ext'
     if !ENV['title']
       $stderr.puts "\t[error] Missing title argument.\n\tusage: rake create:article title='article title'"
       exit 1
@@ -22,7 +25,7 @@ namespace :create do
 
     template = <<TEMPLATE
 ---
-created_at: #{@now.strftime("%Y/%m/%d")}
+created_at: #{@ymd}
 excerpt: 
 kind: article
 publish: true
@@ -39,8 +42,9 @@ TEMPLATE
   end
 
   def calc_path(title)
-    path = "content/" + @now.strftime("%Y/") 
-    filename = @now.strftime("%m-%d-") + title.parameterize('_') + ".md"
+    year, month_day = @ymd.split('-', 2)
+    path = "content/" + year + "/" 
+    filename = month_day + "-" + title.parameterize('_') + ".md"
     [path, filename, path + filename]
   end
 end
