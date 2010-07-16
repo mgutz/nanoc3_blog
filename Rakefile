@@ -1,15 +1,15 @@
-$KCODE = 'UTF8'
 
 require 'nanoc3/tasks'
 require 'fileutils'
-require 'active_support/core_ext'
-require 'active_support/multibyte'
 
 namespace :create do
-  @ymd = Time.now.to_s(:db).split(' ')[0]
 
   desc "Creates a new article"
   task :article do
+    $KCODE = 'UTF8'
+    require 'active_support/core_ext'
+    require 'active_support/multibyte'
+    @ymd = Time.now.to_s(:db).split(' ')[0]
     if !ENV['title']
       $stderr.puts "\t[error] Missing title argument.\n\tusage: rake create:article title='article title'"
       exit 1
@@ -48,3 +48,4 @@ TEMPLATE
     [path, filename, path + filename]
   end
 end
+
