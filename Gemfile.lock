@@ -1,0 +1,31 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.0)
+    builder (2.1.2)
+    cri (1.0.1)
+    haml (3.0.18)
+    i18n (0.4.1)
+    mime-types (1.16)
+    nanoc (3.1.5)
+      nanoc3 (>= 3.1.5)
+    nanoc3 (3.1.5)
+      cri (>= 1.0.0)
+    rack (1.2.1)
+    rake (0.8.7)
+    rdiscount (1.6.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport
+  builder
+  cri
+  haml
+  i18n
+  mime-types
+  nanoc
+  rack
+  rake
+  rdiscount
