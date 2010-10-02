@@ -1,6 +1,6 @@
 ---
 created_at: 2010-09-28
-excerpt: How To Install Latest Murrine Engine
+excerpt: How to install latest GTK2 Murrine engine
 kind: article
 publish: true
 tags: [ubuntu, gnome, customizing]
