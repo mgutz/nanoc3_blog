@@ -8,7 +8,7 @@ module TaggingExtra
   #The tags are only present once in the returned value.
   #When called whithout parameters, all the site items
   #are considered.
-  def tag_set(items=nil) 
+  def tag_set(items=nil)
     items = @items if items.nil?
     tags = Set.new
     items.each do |item|
@@ -33,7 +33,7 @@ module TaggingExtra
     items = @items if items.nil?
     items.select { |item| has_tag?( item, tag ) }
   end
-  
+
   #Count the tags in a given collection of items.
   #By default, the method counts tags in all the
   #site items.
@@ -51,13 +51,13 @@ module TaggingExtra
     count
   end
 
-  
+
   #Sort the tags of an item collection (defaults
   #to all site items) in 'n' classes of rank.
   #The rank 0 corresponds to the most frequent
   #tags. The rank 'n-1' to the least frequents.
   #The result is a hash such as: { tag => rank }
-  def rank_tags(n, items=nil) 
+  def rank_tags(n, items=nil)
 
     items = @items if items.nil?
     count = count_tags( items )
@@ -66,8 +66,8 @@ module TaggingExtra
     count.keys.each do |t|
       max = count[t] if count[t] > max
       min = count[t] if count[t] < min
-    end    
-    divisor = ( ( max.to_f - min )  / n )    
+    end
+    divisor = ( ( max.to_f - min )  / n )
 
     ranks = {}
     count.keys.each do |t|

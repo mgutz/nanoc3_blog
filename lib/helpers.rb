@@ -14,13 +14,13 @@ require 'time'
 #
 # If the output file does not end with an .html extension, item[:layout] is set to 'none'
 # bypassing the use of layouts.
-# 
+#
 def route_path(item)
   # in-memory items have not file
   return item.identifier + "index.html" if item[:content_filename].nil?
-  
+
   url = item[:content_filename].gsub(/^content/, '')
- 
+
   # determine output extension
   extname = '.' + item[:extension].split('.').last
   outext = '.haml'
@@ -32,7 +32,7 @@ def route_path(item)
     outext = '.html'
   end
   url.gsub!(extname, outext)
-  
+
   if url.include?('-')
     url = url.split('-').join('/')  # /2010/01/01-some_title.html -> /2010/01/01/some_title.html
   end
@@ -79,12 +79,12 @@ end
 
 # Copy static assets outside of content instead of having nanoc3 process them.
 def copy_static
-  FileUtils.cp_r 'static/.', 'output/' 
+  FileUtils.cp_r 'static/.', 'output/'
 end
 
 def partial(identifier_or_item)
   item = !item.is_a?(Nanoc3::Item) ? identifier_or_item : item_by_identifier(identifier_or_item)
-  item.compiled_content(:snapshot => :pre) 
+  item.compiled_content(:snapshot => :pre)
 end
 
 def item_by_identifier(identifier)
@@ -107,7 +107,7 @@ def articles_by_year_month
 
     if current_month != d.month
       current_month = d.month
-      month_a = year_h[current_month] = [] 
+      month_a = year_h[current_month] = []
     end
 
     month_a << item
@@ -124,7 +124,7 @@ end
 def n_newer_articles(n, reference_item)
   @sorted_articles ||= sorted_articles
   index = @sorted_articles.index(reference_item)
-  
+
   # n = 3, index = 4
   if index >= n
     @sorted_articles[index - n, n]
@@ -139,7 +139,7 @@ end
 def n_older_articles(n, reference_item)
   @sorted_articles ||= sorted_articles
   index = @sorted_articles.index(reference_item)
-  
+
   # n = 3, index = 4, length = 6
   length = @sorted_articles.length
   if index < length
@@ -166,7 +166,7 @@ def excerpt_count
   @config[:excerpt_count].to_i
 end
 
-def disqus_shortname 
+def disqus_shortname
   @config[:disqus_shortname]
 end
 
