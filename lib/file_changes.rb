@@ -43,9 +43,9 @@ module MGutz
         item[:digest] = digest
         @changes[filename.to_sym] = item
         write_changes
-      elsif item[:digest] != digest 
+      elsif item[:digest] != digest
         item[:updated_at] = File.mtime(filename)
-        item[:digest] = digest 
+        item[:digest] = digest
         write_changes
       end
 
@@ -56,7 +56,7 @@ module MGutz
 
     def write_changes
       File.open(@store_filename, 'w') do |f|
-        YAML.dump @changes, f 
+        YAML.dump @changes, f
       end
     end
   end

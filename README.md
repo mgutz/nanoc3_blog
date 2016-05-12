@@ -32,7 +32,7 @@ From the command line
 Compile the site
 
     # cleans output/ directory. `rm -rf output` works just as well
-    % rake clean 
+    % rake clean
 
     # compiles content/* and copies static/* to output/
     % nanoc compile
@@ -100,7 +100,7 @@ Or, if you use rsync:
 ## Naming Conventions
 
 Hyphens in file names are converted to subdirectories in the output. You decide how you want to organize
-your posts. 
+your posts.
 
     # e.g. These files render to the same output file.
     2010-01-01-post.haml #=> 2010/01/01/post.html

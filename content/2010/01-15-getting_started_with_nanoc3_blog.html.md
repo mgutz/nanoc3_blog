@@ -1,5 +1,5 @@
 ---
-title: Getting Started With nanoc3_blog 
+title: Getting Started With nanoc3_blog
 kind: article
 tags: [haml, nanoc3, sass]
 created_at: 2010/01/15
@@ -26,7 +26,7 @@ From the command line
 Compile the site
 
     # cleans output/ directory. `rm -rf output` works just as well
-    % rake clean 
+    % rake clean
 
     # compiles content/* and copies static/* to output/
     % nanoc compile
@@ -60,7 +60,7 @@ Edit the Markdown file created by running this command:
     # filename is written to console
     % rake create:article title='Hello world'
 
-After compiling or refresh in preview mode, view your page from the front page, archives link and tags link 
+After compiling or refresh in preview mode, view your page from the front page, archives link and tags link
 if you entered tags.
 
 

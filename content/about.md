@@ -10,7 +10,7 @@ The blog compiles into pure HTML. No javascript (keeping it simple). Ultra-fast 
 Source is available from my [nanoc3_blog](http://github.com/mgutz/nanoc3_blog) github repository.
 Source is provided under the [FreeBSD License](/license.html).
 
-Features: 
+Features:
 
 - Minimalist CSS site
 - Uses file extension to determine filter:
@@ -35,7 +35,7 @@ Visit [my blog](http://mgutz.com)
 
 ## Thanks
 
-Thanks to everyone in the 
+Thanks to everyone in the
 [nanoc group](http://groups.google.com/group/nanoc)
 for sample code.
 

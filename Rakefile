@@ -26,7 +26,7 @@ namespace :create do
     template = <<TEMPLATE
 ---
 created_at: #{@ymd}
-excerpt: 
+excerpt:
 kind: article
 publish: true
 tags: [misc]
@@ -43,7 +43,7 @@ TEMPLATE
 
   def calc_path(title)
     year, month_day = @ymd.split('-', 2)
-    path = "content/" + year + "/" 
+    path = "content/" + year + "/"
     filename = month_day + "-" + title.parameterize('_') + ".md"
     [path, filename, path + filename]
   end

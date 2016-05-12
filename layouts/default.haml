@@ -6,15 +6,15 @@
 
   def keywords
     if is_front_page?
-      tag_set.join(', ') 
+      tag_set.join(', ')
     else
-      tags = @item[:tags].nil? ? '' : @item[:tags].join(', ') 
+      tags = @item[:tags].nil? ? '' : @item[:tags].join(', ')
       keywords = @item[:keywords] || ''
       [keywords, tags].join(', ')
     end
   end
   def link_unless_current(s)
-    "<li><a href='/#{s}.html'>#{s}</a></li>" if @item.identifier != "/#{s}/" 
+    "<li><a href='/#{s}.html'>#{s}</a></li>" if @item.identifier != "/#{s}/"
   end
   def logo
     if is_front_page?
@@ -38,7 +38,7 @@
     -# needed since some content render <pre> blocks
     - content = find_and_preserve(yield)
     #main
-      #header 
+      #header
         .logo
           = logo
         #nav
@@ -62,7 +62,7 @@
         = content
       .clear
 
-    -# disqus: inserts number of commments     
+    -# disqus: inserts number of commments
     - if @config[:include_disqus_js] == true
       :javascript
         (function() {
@@ -75,5 +75,5 @@
           }
           document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/#{disqus_shortname}/get_num_replies.js' + query + '"></' + 'script>');
         })();
- 
+
     = render('_ganalytics')
